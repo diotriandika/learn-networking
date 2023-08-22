@@ -38,7 +38,7 @@
    - `find ~/challenge02/specials -user root`
    - source : https://www.cyberciti.biz/faq/how-do-i-find-all-the-files-owned-by-a-particular-user-or-group/
    - masukan output ke ~/challenge02/extension.txt menggunakan echo
-   - `sudo echo 'enter_output_here" > ~/challenge02/extention.txt`
+   - `sudo echo 'enter_output_here" > ~/challenge02/extension.txt`
    - pastikan file sudah sesuai, bila perlu koreksi line lebih menggunakan text editor
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/81e36d7a-b5d5-4d94-9ed4-a310328e4251)
 
