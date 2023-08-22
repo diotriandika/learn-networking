@@ -19,9 +19,9 @@
    - `sudo cp ~/challenge02/specials/example*txt ~/challenge02/backup`
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/991e9dab-f6d6-4b34-b32b-8e4eb40f69b1)
 # Penyelesaian Task 3
-1. list filenya dulu
+1. list direktori filenya dulu
    - `ln -l ~/challenge02/spesials/` atau `ln -lh ~/challenge02/spesials/`
-   - check size setiap file, disini terlihat bahwa minimum size itu `8192/8K` dan maximum size filenya di `12288/12K`, tapi yang dibutuhin disini cuma range 8K sampai 10K
+   - cek size setiap file, disini terlihat bahwa minimum size itu `8192/8K` dan maximum size filenya di `12288/12K`, tapi yang dibutuhin disini cuma range 8K sampai 10K
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/d72c3c9e-82dd-4520-8dc8-9a65dbfd7538)
 2. find file sesuai dengan range size task
    - `find ~/challenge2/spesials/ -size +8193 -size -10241`
@@ -30,3 +30,16 @@
 3. copy file example*.txt sesuai dengan output yang keluar
    - `sudo cp ~/challenge02/spesials/example*.txt ~/challenge02/size/`
 # Penyelesaian Task 4
+1. list direktori filenya dulu
+   - `ln -l ~/challenge02/spesials/`
+   - cek user apa saja yang ada, kasus disini cuma ada 2 user yaitu root dan student.
+   - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/d72c3c9e-82dd-4520-8dc8-9a65dbfd7538)
+2. find file sesuai owner selain student, karena objektifnya disini ngelist file yang tidak dimiliki oleh student. karena disini cuma ada user root dan student jadi list user root aja.
+   - `find ~/challenge02/specials -user root`
+   - source : https://www.cyberciti.biz/faq/how-do-i-find-all-the-files-owned-by-a-particular-user-or-group/
+   - masukan output ke ~/challenge02/extension.txt menggunakan echo
+   - `sudo echo 'enter_output_here" > ~/challenge02/extention.txt`
+   - pastikan file sudah sesuai, bila perlu koreksi line lebih menggunakan text editor
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/81e36d7a-b5d5-4d94-9ed4-a310328e4251)
+
+# __*You Accomplished The Task!*__
