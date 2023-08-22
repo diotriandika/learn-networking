@@ -19,5 +19,14 @@
    - `sudo cp ~/challenge02/specials/example*txt ~/challenge02/backup`
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/991e9dab-f6d6-4b34-b32b-8e4eb40f69b1)
 # Penyelesaian Task 3
-1. 
-
+1. list filenya dulu
+   - `ln -l ~/challenge02/spesials/` atau `ln -lh ~/challenge02/spesials/`
+   - check size setiap file, disini terlihat bahwa minimum size itu `8192/8K` dan maximum size filenya di `12288/12K`, tapi yang dibutuhin disini cuma range 8K sampai 10K
+   - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/d72c3c9e-82dd-4520-8dc8-9a65dbfd7538)
+2. find file sesuai dengan range size task
+   - `find ~/challenge2/spesials/ -size +8193 -size -10241`
+   - > kenapa engga 8192/10240? kyknya size filenya lebih dari itu, jadi gpp kalo dilebihin lagi 1 byte dari value yang udah dilist tadi
+   - source : https://unix.stackexchange.com/questions/569322/find-files-recursively-of-size-range
+3. copy file example*.txt sesuai dengan output yang keluar
+   - `sudo cp ~/challenge02/spesials/example*.txt ~/challenge02/size/`
+# Penyelesaian Task 4
