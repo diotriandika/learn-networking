@@ -5,4 +5,4 @@
    > grep 'INFO' /var/log/sample1.log
 2. Copy output dari grep
    > CTRL + SHIFT + 6 atau bisa select langsung
-   > sudo echo 'enter_output_here' > ~/challenge01/output1.log
+   sudo echo 'enter_output_here' > ~/challenge01/output1.log
