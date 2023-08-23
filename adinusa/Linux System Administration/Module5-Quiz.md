@@ -11,7 +11,7 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- -
    - install mariadb `sudo apt-get install mariadb-sever mariadb-common`
    - verifikasi versi mariadb
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/8889e57a-d53b-4c40-be64-f6c0f29877fc)
-source : https://www.dbi-services.com/blog/how-to-install-a-specific-version-of-mariadb/
+- > source : https://www.dbi-services.com/blog/how-to-install-a-specific-version-of-mariadb/
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/1f57ce1d-8d3f-48d2-a577-c8382fc884fc)
 
