@@ -10,8 +10,8 @@
    - gunakan `jobs` untuk verifikasi script jalan
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/513935ac-0e1e-4e55-92f8-7c424ca3a848)
 # Penyelesaian Task 2
-  - Stop network proccess menggunakan `SIGSTOP`
-  - Terminate interface proccess menggunakan `SIGTERM`
+  - Stop network proccess menggunakan `kill SIGSTOP <pid-number>`
+  - Terminate interface proccess menggunakan `kill SIGTERM <pid-number>`
   - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/8cd7a4e1-08c4-4983-9d57-ac7e4a6f2721)
   
   - > document:
