@@ -14,7 +14,8 @@
   - Terminate interface proccess menggunakan `SIGTERM`
   - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/8cd7a4e1-08c4-4983-9d57-ac7e4a6f2721)
   
-  - document: ![image](https://github.com/diotriandika/learn-networking/assets/109568349/541b1ae7-e83d-478c-87fe-a2f22301855d)
+  - > document:
+  -   ![image](https://github.com/diotriandika/learn-networking/assets/109568349/541b1ae7-e83d-478c-87fe-a2f22301855d)
 
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/604e4f0d-8c69-4bab-9183-b4463871cc41)
