@@ -14,12 +14,13 @@
    - buat symbolic link kalau membuat serverblock baru. namun jika mengedit default, udh otomatis ada symbolic link
    - edit /etc/hosts sebelah localhost dengan domain yang sudah dibuat barusan.
 # Penyelesaian Task 4 
+   - Aktifkan ip forwarding `sudo sysctl net.ipv4.ip_forward=1` kemudian edit `/etc/sysctl` uncomment #net.ipv4.ip_forward=1
    - Konfigurasi Firewall
    - Set default firewall ke public dengan command `sudo firewall-cmd --set-default=public`
    - Aktifkan zone public dengan ngebind ke interface. `firewall-cmd --permanent --zone=public --change-interface=enp0s8`
-   - Configure public agar bisa diakses dengan port 8080 `sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp`
    - Set agar zone public hanya menerima service HTTP melalui port yang sudah diset sebelumya `sudo firewall-cmd --permanent --zone=public --add-service=http`
    - lalu reload servie firewalld `sudo firewall-cmd --reload`
+   - Configure public agar bisa diakses dengan port 8080 `sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp`
    - cek active zones dengan  `firewall-cmd --get-active-zones`
    - source : https://www.redhat.com/sysadmin/beginners-guide-firewalld?sc_cid=7013a000003SdA3AAK&gclid=Cj0KCQjwuZGnBhD1ARIsACxbAVhTHo9tXGbU8_RS5PXhRguVxr3F0Fhgb-gWZ1c_XYzzxkili5tbimMaAqVfEALw_wcB
 # Verifikasi
@@ -29,7 +30,6 @@
   - namun jika diakses dengan port 8080
   - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/a66de068-2ea4-40b2-a5d6-d43abcd9ba63)
 
- 
-task ganti index.html ke Hello adinusa, I am lnearher
-ganti root document ke /opt/lab16
-konfig firewalld ke zone public & listen di 8080 when accessed via webserver
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/9732e1aa-2063-4d64-af99-4f30fc617481)
+
+# **_You Completed The Task!_**
