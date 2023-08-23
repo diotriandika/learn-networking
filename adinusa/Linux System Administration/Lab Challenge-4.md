@@ -20,4 +20,4 @@
    
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/cdf66995-7b5d-4551-a0a3-1bf433d8fc7d)
-# **_You Accomplished The Task!_**
+# **_You Completed The Task!_**
