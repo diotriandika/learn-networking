@@ -45,7 +45,7 @@ masuk superuser/root `sudo -i`
 # Penyelesaian Task 5
 1. Edit file `/etc/fstab` agar filesystem otomatis mounted ketika system bootup
    - `nano /etc/fstab`
-   - masukan line sesuai format : **LABEL=<your-label>  <mount-point>  <file-system-type>  <mount-option>  <dump>  <pass>**
+   - masukan line sesuai format : `LABEL=<your-label>  <mount-point>  <file-system-type>  <mount-option>  <dump>  <pass>`
    - ![image](https://github.com/diotriandika/learn-networking/assets/109568349/1b170016-681a-4340-828c-a3381c6f3b1a)
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/8dd0b962-1cb3-4d1a-82c9-ff50a3fb76c9)
