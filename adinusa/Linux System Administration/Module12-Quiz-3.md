@@ -11,4 +11,7 @@
    - gunakan `passwd --expire <user>` agar user bisa mengganti password ketika login pertama kali.
 3. Managing Group
    - buat group `mentor` menggunakan `groupadd <group-name>`
-   - 
+   - tambahkan user `lnearher` ke group `mentor` dengan command `usermod -G <group> <user>`
+
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/a8be9425-45c9-4c95-a0dc-8d432c520beb)
+# **_You Completed The Task!_**
