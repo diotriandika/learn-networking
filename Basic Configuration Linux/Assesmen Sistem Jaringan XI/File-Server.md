@@ -4,9 +4,9 @@ Samba merupakan sebuah tool yang mengimplementasikan protokol SMB (server messag
    Update repo dan install samba
 
     sudo apt update
-    sudo apt isntall samba smbclient clifs-utils
+    sudo apt install samba smbclient clifs-utils
 
-   Buat Shared Samba Directory, disini kita buat /publik dan /pribadi sebagai shared folder public dan private directory.
+   Buat Shared Samba Directory, disini kita buat /public dan /private sebagai shared folder public dan private directory.
 
     sudo mkdir /public
     sudo mkdir /private
