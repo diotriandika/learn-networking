@@ -26,8 +26,8 @@ Samba merupakan sebuah program file sharing yang mengimplementasikan protokol SM
 
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/5d70ce16-d317-4114-aad1-3b78dbde361f)
 
-## Samba User & Group
-   Di Private Share diatas hanya akan memberikan akses kepada user dalam group `smbshare`, selanjutnya buat group `smbshare ` dan set permission direktori
+## Creating Samba User & Group
+   Konfigurasi Private Share diatas hanya akan memberikan akses kepada user dalam group `smbshare`, jadi untuk bisa mengakses direktori tersebut selanjutnya buat group `smbshare ` dan set permission direktori
 
     sudo group add smbshare
     sudo chrgp -R smbshare /private/
