@@ -1,5 +1,5 @@
 # Langkah - Langkah Installasi & Konfigurasi Samba
-Samba merupakan sebuah tool yang mengimplementasikan protokol SMB (server message block). Samba diadaptasi oleh Windows dan Unix, sehingga menjadi tool yang berguna jika menggunakan kedua operasi sistem tersebut.
+Samba merupakan sebuah program file sharing yang mengimplementasikan protokol SMB (server message block). Samba diadaptasi oleh Windows dan Unix, sehingga menjadi tool yang berguna jika menggunakan kedua operasi sistem tersebut.
 ## Setup Samba Standalone
    Update repo dan install samba
 
