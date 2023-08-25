@@ -1,1 +1,0 @@
-# Berisi Config' Linux
