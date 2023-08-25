@@ -1,4 +1,4 @@
-#Langkah - Langkah Mengganti Hostname
+# Langkah - Langkah Mengganti Hostname
 Hostname sebuah perangkat bisa dikatakan nama/alias dari sebuah perangkat tersebut.
 ## Mengganti Hostname melalui /etc/hostname
 Edit file `/etc/hostname` kemudian rename hostname sebelumnya dengan hostname yang diinginkan
@@ -17,7 +17,7 @@ Edit file `/etc/hosts` dan rename default hostname dengan hostname yang baru kem
 >
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/edc7b603-1d70-4ae4-b8b6-0f480fcda632)
 
-##Mengganti Hostname menggunakan hostnamectl
+## Mengganti Hostname menggunakan hostnamectl
 Gunakan program `hostnamectl` untuk mengganti hostname
 
     sudo hostnamectl set-hostname <new-hostname>
@@ -26,5 +26,5 @@ Edit file `/etc/hosts` dan rename default hostname dengan hostname yang baru kem
 
     sudo nano /etc/hosts
 
-##Verifikasi
+## Verifikasi
 Untuk melihat apakah hostname sudah berhasil diubah atau belum, bisa menggunakan command `hostname`, re-login atau juga bisa langsung reboot system
