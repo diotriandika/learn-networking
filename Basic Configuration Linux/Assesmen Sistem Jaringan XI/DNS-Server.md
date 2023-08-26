@@ -34,7 +34,21 @@ Selanjutnya edit file `db.<your-db-file>`
 
 Konfigurasi file sesuai dengan yang dibutuhkan, replace `localhost` dengan `<domain-name>`
 ```
-ayam goreng
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     <domain-name.net>. root.lnearher.id. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      lnearher.id.
+@       IN      A       127.0.0.1
+@       IN      AAAA    ::1
+
 ```
 
 > Note : Jika masih bingung dengan penggunaan DNS Record, bisa cek link dibawah
