@@ -1,1 +1,0 @@
-## Konfigurasi Service Linux
