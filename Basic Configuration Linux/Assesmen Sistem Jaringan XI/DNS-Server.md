@@ -46,20 +46,38 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      lnearher.id.
-@       IN      A       127.0.0.1
-@       IN      AAAA    ::1
+@       IN      A       <address>
+<www/dkk>    IN      A       <address>
 
 ```
 
-> Note : Jika masih bingung dengan penggunaan DNS Record, bisa cek link dibawah
->
-> https://simpledns.plus/help/dns-record-types
+> Note :
+
+         - lnearher.id replace dengan domain kalian
+         
+         - <address> replace dengan IP yang ingin kalian forward (sesuaikan dengan yang ada di `named.conf.local`
+         
+         - <www/dkk> merupakan pembuka dari domain, gunakan sesuai kebutuhan.
+> 
+> Jika masih bingung dengan penggunaan DNS Record, bisa cek link [ini](https://simpledns.plus/help/dns-record-types)
 
 Selanjutnya restart service bind9 dengan command
 
     sudo systemctl restart bind9
 
 Untuk melihat apakah dns forwarding sudah bekerja, gunakan tool nslookup seperti contoh dibawah
+
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/b4e7cb8d-d069-4c79-8491-d9baa3f00b6e)
+
+> Pastikan untuk mengatur nameserver/dns di client.
+
+Disini Zone Forwarding sudah berhasil, namun jika kita coba menggunakan IP akan terdapat output seperti dibawah
+
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/75ae1780-6aa8-44e9-b32f-2a047982d684)
+
+Disini tidak IP tidak da
+
+
 
 
 
