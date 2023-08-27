@@ -16,7 +16,7 @@ Exit dengan CTRL+X kemudian Y dan ENTER.
 
 Selanjutnya Edit file `dhcpd.conf`
 ```
-sudo nano /etc/dhcp/dhcpd.conf
+sudo nano -l /etc/dhcp/dhcpd.conf
 ```
 Uncomment pada line berikut
 ```
