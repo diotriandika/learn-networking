@@ -92,7 +92,7 @@ sudo nano index.html
 Jika sudah, sama seperti diatas kita isi dengan code html
 
 Contoh :
-> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/1abe6f8a-5ee1-4044-9816-2c9fd5b22d9f)
+> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/651542ce-8aaa-4d56-bdd0-e43aab7982ec)
 
 Save dengan CTRL+X dan Y kemudian ENTER
 
@@ -118,7 +118,7 @@ Cek status apache2 apakah sudah berjalan dengan normal atau belum
 sudo systmctl status apache2
 ```
 Jika sudah cek kembali dibrowser client dengan mengetikan IP Address Server pada tab search
-> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/b6907227-f278-448c-8f8d-6df5257d6f78)
+> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/7ce026c9-4510-40ae-94b7-ba9e614c5376)
 
 Jika sudah berubah ini berarti site kita sudah bisa berjalan.
 
