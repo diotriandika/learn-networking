@@ -34,6 +34,13 @@ Untuk mengecek apakah mail yang kita kirim sebelumnya sudah bisa atau belum kita
 ```
 telnet mail.itnsa.id 110
 ```
+Format :
+```
+user <user-receiver>
+pass <user-receiver-password>
+list
+retr <message number>
+```
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/e006762d-1aa8-4c42-ab8c-4c59b85ff22c)
 
 Nah disini sudah bisa kita lihat isi pesan yang dikirim sebelumnya oleh `zeta@itnsa.id`
