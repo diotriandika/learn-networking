@@ -1,5 +1,5 @@
 # Langkah - Langkah Instalasi dan Konfigurasi Email Server dengan Postfix SMTP
-Postfix SMTP adalah sebuah MTA (Message Transfer Agent) yang menyediakan layanan untuk mengirimkian email.
+Postfix sebagai SMTP-Server adalah sebuah MTA (Message Transfer Agent) yang menyediakan layanan untuk mengirimkian email.
 
 - Pastikan IP Address sudah terkonfigurasi
 - FQDN sudah diset
