@@ -95,7 +95,8 @@ Kita juga bisa mengirim pesan kembali melalui Webmail ini, sebagai contoh saya m
 >
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/a261c3b4-b2b0-4b9f-ad82-a2eee4d94ffb)
 
-> Jika misalnya kalian tidak bisa mengakses websitenya, allow port 80 dengan `ufw` atau tools firewall lainnya, begitu juga dengan jalur udp yaitu 53
+
+> Note : Jika misalnya kalian tidak bisa mengakses websitenya, allow port 80 dengan `ufw` atau tools firewall lainnya, begitu juga dengan jalur udp yaitu 53
 
 **_Done_**
 
