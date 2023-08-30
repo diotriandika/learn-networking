@@ -67,12 +67,20 @@ Untuk meverifikasi apakah Postfix sudah berjalan, pertama kita buat user terlebi
 sudo adduser <user>
 ```
 Disini saya membuat dua user sebagai test (nantinya mona akan sebagai penerima di task berikutnya)
-> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/81da333b-43b0-40d9-876e-28ed002e20e6)
+> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/e1266c47-757c-4327-a509-2019078a8614)
 
 Mengirim pesan dengan telnet. Untuk mengirim pesan menggunakan telnet, disini menggunakan port 25
 ```
 telnet <your-domain> 25
 ```
-> ![image](https://github.com/diotriandika/learn-networking/assets/109568349/8c4a0aec-744a-4e2b-a56d-83db1799c189)
+Format :
+```
+mail from: user_sender
+rcpt to: user_receiver
+data
+<messages>
+.
+quit
+```
+> !![image](https://github.com/diotriandika/learn-networking/assets/109568349/c0201933-5810-49cd-84e2-05ddedaca463)
 
-> Note : Untuk menerima email, kita menggunakan Dovecot yang menyediakan protokol IMAPD dan POP3. Cek [disini](link.hentai.net)
