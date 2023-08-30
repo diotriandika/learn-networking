@@ -3,7 +3,7 @@
 
 Roundcube merupakan sebuah email client IMAP yang berbasis Web atau bisa disebut Webmail yang digunakan untuk mengelola email. Karena Roundcube dioperasikan melalui Website, jadi pengoperasiannya mudah untuk mayoritas orang.
 
-- Pastikan sudah mengkonfigurasi [Postfix](https://github.com/diotriandika/learn-networking/blob/main/Basic%20Configuration%20Linux/Setup-Service-LKSN2022/Postfix-SMTP-Server.md) dan [Dovecot](https://github.com/diotriandika/learn-networking/blob/6a6cfd1a5342b826d3e62469d0584ba5e9f5d1d5/Basic%20Configuration%20Linux/Setup-Service-LKSN2022/Dovecot-IMAPD%26POP3.md).
+- Pastikan sudah mengkonfigurasi [Postfix](https://github.com/diotriandika/learn-networking/blob/3f579774a837c60da92bcb3da6aed09d1967bdd3/Basic%20Configuration%20Linux/Setup-Service-LKSN2022/Postfix-SMTP-Server.md) dan [Dovecot](https://github.com/diotriandika/learn-networking/blob/6a6cfd1a5342b826d3e62469d0584ba5e9f5d1d5/Basic%20Configuration%20Linux/Setup-Service-LKSN2022/Dovecot-IMAPD%26POP3.md).
 - Project ini terhubung dengan project sebelumnya agar mudah untuk mengerti fungsi dari setiap programnya.
 
 ## Instalasi Roundcube
