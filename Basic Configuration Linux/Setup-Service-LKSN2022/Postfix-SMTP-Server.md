@@ -3,6 +3,11 @@ Postfix sebagai SMTP-Server adalah sebuah MTA (Message Transfer Agent) yang meny
 
 - Pastikan IP Address sudah terkonfigurasi
 - FQDN sudah diset
+  
+> Note : Sebelum instalasi Roundcube, saya rekomendasikan untuk menyiapkan alamat domain yang nantinya digunakan untuk konfigurasi. Contohnya saya disini menggunakan domain `mail.itnsa.id` yang saya konfigurasi lokal dengan bind 9
+>
+> Cek [disini](https://github.com/diotriandika/learn-networking/blob/6a6cfd1a5342b826d3e62469d0584ba5e9f5d1d5/Basic%20Configuration%20Linux/Assesmen%20Sistem%20Jaringan%20XI/DNS-Server.md) untuk cara set-up domain dengan bind9
+
 ## Instalasi Postfix
 Update list package dengan `apt-get update` kemudian install postfix
 ```
