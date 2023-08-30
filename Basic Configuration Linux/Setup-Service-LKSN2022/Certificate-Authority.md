@@ -119,6 +119,8 @@ mv <ca-directory>/newcert/00.pem client.crt
 ## Cara menggunakan Certificate
 http://trijanuari33.blogspot.com/2018/04/cara-lengkap-mengkonfigurasi.html
 
+https://medium.com/prastamaha/konfigurasi-root-ca-intermediate-ca-server-certificate-f7484dc2be24
+
 
 CARI CARA BUAT INTERMEDIATE CA
 
