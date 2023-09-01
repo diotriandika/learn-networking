@@ -147,6 +147,7 @@ Selanjutnya kita akan mengalokasikan database dari icingaweb2 yang sebelumnya su
 - isi `Database Name` dengan nama database icingaweb2 kalian
 - isi `Username` dengan user yang sudah kita buat di database icingaweb2
 - isi `Password` dengan password dari user database icingaweb2
+
 Lalu validasi konfigurasi dengan klik menu `Validate Configuration` di kanan `Next`, jika muncul notifikasi hijau diatas, ini menandakan bahwa konfigurasi sudah tervalidasi.
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/0b3a7340-c445-4b72-9245-d1f7bc645df6)
 
@@ -172,6 +173,7 @@ Selanjutnya sama seperti sebelumnya, kita alokasikan database icinga ido
 - isi `Database Name` dengan nama database icinga ido kalian
 - isi `Username` dengan user yang sudah kita buat di database icinga ido
 - isi `Password` dengan password dari user database icinga ido
+
 Lalu validasi konfigurasi dengan klik menu `Validate Configuration` di kanan `Next`, jika muncul notifikasi hijau diatas, ini menandakan bahwa konfigurasi sudah tervalidasi.
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/938de2e2-e56b-47db-991c-2966a44f1310)
 
