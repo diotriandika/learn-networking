@@ -1,0 +1,1 @@
+konfig dns slave debian
