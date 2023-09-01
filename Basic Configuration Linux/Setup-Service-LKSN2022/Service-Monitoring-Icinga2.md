@@ -1,5 +1,5 @@
 # Langkah - Langkah Instalasi dan Konfigurasi Icinga2
-Icinga2 merupakan sebuah software monitoring sistem, server, resources dll berbasis web. Icinga2 bisa diguanakan dalam environment windows ataupun linux. Icinga2 juga memiliki banyak plugin-plugin yang berguna, yang salah satunya kita bisa mengirimkan notifikasi monitoring ke email.
+Icinga2 merupakan sebuah software monitoring sistem, server, resources dll. Icinga2 memiliki basis web interface (Icinga Web 2) yang bisa memudahkan kita untuk memonitoring. Selain itu icinga2 juga memiliki banyak plugin yang berguna.
 
 Prerequisites:
 - Terkonfigurasi IP Address pada node
