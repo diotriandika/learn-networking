@@ -45,5 +45,8 @@ sudo slapcat
 ```
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/cfc03ba5-2419-4c53-9cdc-683aec85a39a)
 
+https://www.howtoforge.com/how-to-install-openldap-on-debian-11/
 
+https://www.thegeekstuff.com/2015/02/openldap-add-users-groups/
 
+https://www.digitalocean.com/community/tutorials/how-to-manage-and-use-ldap-servers-with-openldap-utilities
