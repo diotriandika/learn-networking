@@ -91,7 +91,7 @@ LDAP Client disini digunakan untuk akses LDAP Server yang sudah dibuat. Install 
 sudo apt install libnss-ldap
 ```
 pokonya disable ncsd service
-
+https://www.openldap.org/lists/openldap-technical/201403/msg00107.html
 
 Referensi :
 - https://tylersguides.com/guides/openldap-how-to-add-a-user/
