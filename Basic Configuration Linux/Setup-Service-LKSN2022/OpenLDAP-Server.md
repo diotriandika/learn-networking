@@ -88,9 +88,9 @@ sudo ldapadd -x -W -D "cn=admin,dc=itnsa,dc=id" -f lnearher.ldif
 ## Install dan Konfigure LDAP Client
 LDAP Client disini digunakan untuk akses LDAP Server yang sudah dibuat. Install `libnss-ldap` dan `libpam-ldap`
 ```
-sudo apt install libnss-ldap libpam-ldap
+sudo apt install libnss-ldap
 ```
-
+pokonya disable ncsd service
 
 
 Referensi :
