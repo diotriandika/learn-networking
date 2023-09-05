@@ -2,6 +2,7 @@
 Table of Contents :
 - [x] IPv4 Addressing
 - [x] Setup Hostname
+- [x] IP Forwarding
 ## IPv4 Addressing
 ### Node Buton
 Masuk ke node _buton.lks.id_ set IPv4 Static
