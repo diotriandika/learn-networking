@@ -109,7 +109,9 @@ Disini saya akan mulai dengan mengatur IP Address dari RTB, RTX, dan Clinet (Bud
    exit
    ```
 ### Budi-PC
-Untuk mengkonfigurasi IP Address di Budi-PC, lakukan dengan masuk ke Control Panel > Network & Internet > Network and Sharing Center > Change Adapter Settings > Select Interface yang terhubung ke RTB > Right-Click dan Select Properties > lalu Select Internet Protocol version 4 atau IPv4  
-
+Untuk mengkonfigurasi IP Address di Budi-PC, lakukan dengan masuk ke 
+```bash
+Control Panel > Network & Internet > Network and Sharing Center > Change Adapter Settings > Select Interface yang terhubung ke RTB > Right-Click dan Select Properties > lalu Select Internet Protocol version 4 atau IPv4  
+```
 Set IP sesuai dengan Appendix
 > ![image](https://github.com/diotriandika/learn-networking/assets/109568349/daa48103-856f-41be-a828-61cc2cb31db4)
