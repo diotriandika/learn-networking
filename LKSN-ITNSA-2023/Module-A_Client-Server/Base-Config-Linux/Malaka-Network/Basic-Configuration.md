@@ -5,7 +5,7 @@ Table of Contents :
 ## IPv4 Addressing
 ### Node Buton
 Masuk ke node _buton.lks.id_ set IPv4 Static
-```
+```bash
 nano /etc/network/interfaces
 ```
 Format :
