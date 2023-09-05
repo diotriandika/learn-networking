@@ -3,10 +3,10 @@
 ## Malaka Network Appendix:
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
-|buton.lks.id|45.8.17.1/24|ens33|
+|buton.lks.id|45.8.17.25/24|ens33|
 |           |10.196.10.1/25|ens36|
 |cilik.lks.id|45.8.17.21/24|ens33|
-|aur.lks.id|45.8.17.22|ens33|
+|aur.lks.id|45.8.17.22/24|ens33|
 
 ## Service :
 - DNS Server
@@ -19,9 +19,9 @@
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
 |buton.lks.id|45.8.17.1/24|ens33|
-|           |10.196.10.1/25|ens36|
+|           |10.196.10.25/25|ens36|
 |cilik.lks.id|45.8.17.21/24|ens33|
-|aur.lks.id|45.8.17.22|ens33|
+|aur.lks.id|45.8.17.22/24|ens33|
 |muna.lks.id|10.196.10.1/25|ens33|
 |komodo.lks.id|10.196.10.21/25|eth0|
 |jukung.lks.id|10.196.10.22/25|eth0|
