@@ -1,5 +1,6 @@
 # Base Configuration di Malaka Network
-##Malaka Network Appendix:
+
+## Malaka Network Appendix:
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
 |buton.lks.id|45.8.17.1/24|ens33|
@@ -14,7 +15,7 @@
 - Site-to-Site VPN with `OpenVPN`
 - Iptables Traffic Logging
 
-##Complete Appendix:
+## Complete Appendix:
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
 |buton.lks.id|45.8.17.1/24|ens33|
