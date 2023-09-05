@@ -1,5 +1,5 @@
-## Base Configuration di Malaka Network
-Malaka Network Appendix:
+# Base Configuration di Malaka Network
+##Malaka Network Appendix:
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
 |buton.lks.id|45.8.17.1/24|ens33|
@@ -14,7 +14,7 @@ Malaka Network Appendix:
 - Site-to-Site VPN with `OpenVPN`
 - Iptables Traffic Logging
 
-Complete Appendix:
+##Complete Appendix:
 |HOSTS|NETWORK|INTERFACE
 |----|-----|-----|
 |buton.lks.id|45.8.17.1/24|ens33|
@@ -27,3 +27,5 @@ Complete Appendix:
 |ligitan.lks.id|10.196.10.126/25|eth0|
 |rote.lks.id|10.200.2.21/25|eth0|
 |sipadan.lks.id|10.200.2.126/25|ens33|
+
+> Note : _**Karena dalam kisi kisi tidak ada Address Configuration Table, Maka ini tidak tervalidasi**_
