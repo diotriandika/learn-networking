@@ -77,5 +77,14 @@ edit file `/etc/hosts`
 ```
 45.8.17.22   cilik.lks.id
 ```
+## IP-Forwarding di Buton
+Masuk ke node _buton.lks.id_ edit file `sysctl.conf`
+```bash
+nano -l /etc/sysctl.conf
+```
+Uncomment di line '28'
+```
+ 28 net.ipv4.ip_forward=1
+```
 ## Verifikasi
 Jika sudah reboot server dan cek konfigurasi.
