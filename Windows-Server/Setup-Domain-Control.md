@@ -1,0 +1,7 @@
+# Setup Domain Control pada Windows Server
+Secara umum, Domain Controller adalah server yang bertugas untuk merespons otentikasi, manajemen pengguna, manajemen keamanan, dan manajemen sumber daya di seluruh jaringan yang menggunakan Active Directory.
+
+> Prerequisites:
+> - Terkonfigurasi IP Address
+> - Hostname Windows Teridentifikasi
+## Instalasi Domain Controller
