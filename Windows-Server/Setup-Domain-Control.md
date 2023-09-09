@@ -41,16 +41,17 @@ Selanjutnya adalah mengkonfigurasi Domain Controller
 2. Pada menu pertama (Deployment Configuration) silahkan pilih deployment operation yang dibutuhkan, disini saya akan menggunakan server ini sebagai DC utama jadi saya memilih `Add a new forest` dan menambahkan domain baru.
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/ebe23302-41a0-4ea9-866c-e3c5033b8471)
 3. Selanjutnya menu (Domain Controller Options) biarkan default dan tambahkan Recovery Password (DSRM) untuk mengubah & mereset DC.
+   
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/ad250bf6-8f29-46b6-b501-b360b914af61)
-4. **(DNS Option) bisa langsung diskip dengan unmark (biarkan kosong) pada `Create DNS Delegation`**
-5. (Additional Option) biarkan default menyesuaikan dengan domain
+5. **(DNS Option) bisa langsung diskip dengan unmark (biarkan kosong) pada `Create DNS Delegation`**
+6. (Additional Option) biarkan default menyesuaikan dengan domain
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/d1bf6f8a-3154-4140-a150-2f99b6eed7d8)
-6. **Untuk (Paths) biarkan default**
-7. (Review Option) Review kembali konfigurasi, jika dirasa sudah benar klik next
+7. **Untuk (Paths) biarkan default**
+8. (Review Option) Review kembali konfigurasi, jika dirasa sudah benar klik next
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/702e349d-f7cb-4f4e-8fc6-aee7c2c818c2)
-8. (Prequisites Check) jika sudah memenuhi ketentuan, selanjutnya select Install
+9. (Prequisites Check) jika sudah memenuhi ketentuan, selanjutnya select Install
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/44f81449-9d02-4fb6-bcd0-5f3ac7942871)
-9. Jika proses Instalasi Selesai, secara otomatis server akan langsung melakukan rebooting dan tunggu hingga booting kembali
+10. Jika proses Instalasi Selesai, secara otomatis server akan langsung melakukan rebooting dan tunggu hingga booting kembali
     ![image](https://github.com/diotriandika/learn-networking/assets/109568349/e88a01f4-6781-4cd4-a5b9-3dd693abda15)
 ## Verifikasi
 User Login akan berubah seperti contoh dibawah
