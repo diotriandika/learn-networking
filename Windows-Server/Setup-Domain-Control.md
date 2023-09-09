@@ -25,9 +25,10 @@ Configured:
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/dcdff4ea-c27f-417f-a7ed-ab436bb19aef)
 
 4. Tab dibawah next aja
+   
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/ffad3e72-1e18-48ae-a3d7-2808c90d9729)
 
-5. Install Roles dan tunggu hingga proses instalasi selesai
+6. Install Roles dan tunggu hingga proses instalasi selesai
    ![image](https://github.com/diotriandika/learn-networking/assets/109568349/a310d10f-81d4-4dbf-8e65-bc269982cda6)
 ## Konfigrurasi Domain Controller
 Disini sudah terlihat bahwa Active Directory dan Domain Controller sudah terpasang yang diindikasikan dengan adanya menu baru pada Roles & Server Groups
