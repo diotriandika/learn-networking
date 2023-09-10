@@ -59,3 +59,8 @@ Required:
 Cek kembali dengan membuka file explorer dan coba untuk membuat file/folder di disk tersebut
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/69eb59c7-20f7-4803-80ac-d98f551491c4)
 
+Referensi :
+- https://computingforgeeks.com/how-to-configure-iscsi-initiator-in-windows-server/?expand_article=1
+- https://www.server-world.info/en/note?os=Windows_Server_2019&p=iscsi&f=4
+- https://www.sqlshack.com/how-to-configure-an-iscsi-initiator-on-windows-server-2016/
+- https://softwarekeep.com/help-center/how-to-create-partitions-on-windows-10
