@@ -1,1 +1,1 @@
-# Configuring DFS Nameserver
+# Konfigurasi DFS Namespaces pada Windows Server
