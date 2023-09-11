@@ -13,7 +13,7 @@ Realm          : lks.id
 ## Step 1
 Install required packages
 ```bash
-root@muna:~# apt install realmd sssd sssd-tools libnss-sss libpam-sss samba-common-bin oddjob oddjob-mkhomedir packagekit
+root@muna:~# apt install realmd sssd sssd-tools libnss-sss libpam-sss samba-common-bin oddjob oddjob-mkhomedir packagekit adcli
 ```
 ## Step 2
 Config DNS
