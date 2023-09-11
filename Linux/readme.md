@@ -1,1 +1,1 @@
-# Mid-Advance Linux Configuration
+# Unix Configuration (Mostly Debian)
