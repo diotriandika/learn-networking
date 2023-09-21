@@ -2,7 +2,8 @@
 
 Topologi : 
 
-![image-20230921065702656](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230921065702656.png)
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/82169e8f-7a96-496f-8f06-fc163f59d8bf)
+
 
 ## Malaka Network
 
