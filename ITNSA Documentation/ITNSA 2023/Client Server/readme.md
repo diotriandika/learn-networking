@@ -4,10 +4,15 @@ Topologi :
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/82169e8f-7a96-496f-8f06-fc163f59d8bf)
 
+> Note : Jika teks dalam format *italic* bisa diskip dulu karena belum pasti
+
+## Basic Configuration
+> Referensi dari soal LKS 2022
+- Configure all servers with hostname and IP Address according to appendix
+- Configure all linux servers to allow non-root login only via SSH
+- Configure all windows server to be pingable
 
 ## Malaka Network
-
-> Note : Jika teks dalam format *italic* bisa diskip dulu karena belum pasti
 
 ### DNS Server
 
