@@ -3,7 +3,8 @@
 Pada Legacy Inter-VLAN Routing, setiap interface pada router akan terhubung ke port switch di VLAN yang berbeda. Interface Router berfungsi sebagai gateway default untuk local host di subnet VLAN. Cara ini sangat terbatas dalam skalabilitas, karena setiap kita ingin menambahkan VLAN baru, perlu diingat bahwa port pada router itu sangatlah terbatas. Sebagai contoh sebuah router memiliki 4 port, jika semuanya ingin digunakan VLAN, maka hanya 4 segmen VLAN yang bisa dibuat.
 
 Topologi:
-![image-20230925223307729](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925223307729.png)
+
+![image-20230925223307729](https://github.com/diotriandika/learn-networking/assets/109568349/93695964-95c3-4765-943a-decca86c2147)
 
 VLAN Table :
 | VLAN ID | Name   | Interface | Network         |
