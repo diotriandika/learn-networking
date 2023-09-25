@@ -2,76 +2,12 @@
 
 **Task:**
 
-![image-20230925084258207](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925084258207.png)
-
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/f5ad8538-8e95-4d41-a0d2-dfc720dd5b9e)
 ## Addressing Configuration Steps
 
 > according to Appendix 
 
-### Step 1 (VLAN SW IP Address Assign SW1-SW3)
-
-#### Example 
-
-```c++
-<hostname>> enable
-<hostname># configure terminal
-    
-# Assigning IP VLAN 10
-<hostname>(config)# interface vlan 10
-<hostname>(config-if)# ip address <ip-address> <subnet-mask>
-<hostname>(config-if)# ipv6 address <ipv6-address>
-<hostname>(config-if)# exit
-    
-# Assigning IP VLAN 20
-<hostname>(config)# interface vlan 20
-<hostname>(config-if)# ip address <ip-address> <subnet-mask>
-<hostname>(config-if)# exit
-```
-
-#### Verification
-
-```c++
-<hostname># show ip interface brief
-<hostname># show running-config | sec vlan
-```
-
-### Step 2 (Router Address Configuration)
-
-#### VLAN Addressing Example (R2 & R3)
-
-```C++
-<hostname>> enable
-<hostname># configure terminal
-    
-# UP Interface that has VLAN
-<hostname>(config)# interface gigabitEthernet 0/1
-<hostname>(config-if)# no shutdown
-<hostname>(config-if)# exit
-    
-# Adding IP on Sub-interfaces VLAN 10
-<hostname>(config)# interface gigabitEthernet0/1.10
-<hostname>(config-if)# encapsulation dot1Q 10
-<hostname>(config-if)# ip address <vlan10-address> <vlan10-subnetmask>
-<hostname>(config-if)# exit
-    
-# Adding IP on Sub-interface VLAN 20
-<hostname>(config)# interface gigabitEthernet0/1.20
-<hostname>(config-if)# encapsulation dot1Q
-<hostname>(config-if)# ip address <vlan20-address> <vlan20-subnetmask>
-<hostname>(config-if)# exit
-
-# Serial Interface IP Configuration
-<hostname>(config)# interface serial <serial-Interfaces>
-<hostname>(config-if)# ip address <serial-ip-address> <serial-subnetmask>
-<hostname>(config-if)# no shutdown
-<hostname>(config-if)# exit
-    
-# Loopback Interface IP Configuration
-<hostname>(config)# interface loopback 0
-<hostname>(config-if)# ip address <loopback-ip-address> <loopback-subnetmask>
-<hostname>(config-if)# exit
-```
-
+### Step 1 (Router Address Configuration)
 #### IP Addressing Example (ISP, R1 & R4)
 
 **R1 & R4**
@@ -113,6 +49,67 @@
 <hostname>(config-if)# ip address <loopback-ip-address> <loopback-subnetmask>
 <hostname>(config-if)# exit
 ```
+
+#### VLAN Addressing Example (R2 & R3)
+```C++
+<hostname>> enable
+<hostname># configure terminal
+    
+# UP Interface that has VLAN
+<hostname>(config)# interface gigabitEthernet 0/1
+<hostname>(config-if)# no shutdown
+<hostname>(config-if)# exit
+    
+# Adding IP on Sub-interfaces VLAN 10
+<hostname>(config)# interface gigabitEthernet0/1.10
+<hostname>(config-if)# encapsulation dot1Q 10
+<hostname>(config-if)# ip address <vlan10-address> <vlan10-subnetmask>
+<hostname>(config-if)# exit
+    
+# Adding IP on Sub-interface VLAN 20
+<hostname>(config)# interface gigabitEthernet0/1.20
+<hostname>(config-if)# encapsulation dot1Q
+<hostname>(config-if)# ip address <vlan20-address> <vlan20-subnetmask>
+<hostname>(config-if)# exit
+
+# Serial Interface IP Configuration
+<hostname>(config)# interface serial <serial-Interfaces>
+<hostname>(config-if)# ip address <serial-ip-address> <serial-subnetmask>
+<hostname>(config-if)# no shutdown
+<hostname>(config-if)# exit
+    
+# Loopback Interface IP Configuration
+<hostname>(config)# interface loopback 0
+<hostname>(config-if)# ip address <loopback-ip-address> <loopback-subnetmask>
+<hostname>(config-if)# exit
+```
+
+### Step 2 (VLAN SW IP Address Assign SW1-SW3)
+#### Example 
+
+```c++
+<hostname>> enable
+<hostname># configure terminal
+    
+# Assigning IP VLAN 10
+<hostname>(config)# interface vlan 10
+<hostname>(config-if)# ip address <ip-address> <subnet-mask>
+<hostname>(config-if)# ipv6 address <ipv6-address>
+<hostname>(config-if)# exit
+    
+# Assigning IP VLAN 20
+<hostname>(config)# interface vlan 20
+<hostname>(config-if)# ip address <ip-address> <subnet-mask>
+<hostname>(config-if)# exit
+```
+
+#### Verification
+
+```c++
+<hostname># show ip interface brief
+<hostname># show running-config | sec vlan
+```
+
 
 ### Step 3 (IP Addressing ASA)
 
@@ -335,7 +332,7 @@ Check routing table by run
 
 Check connectivity by pinging host by host
 
-Check HSRP infromation by run
+Check HSRP information by run
 
 ```markdown
 <hostname># show standby brief
