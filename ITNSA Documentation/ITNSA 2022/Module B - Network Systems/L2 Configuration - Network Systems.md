@@ -2,8 +2,7 @@
 
 **Task:**
 
-![image-20230925074958256](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925074958256.png)
-
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/23acc7e1-e29a-4383-95d8-f7e39718dacb)
 ## Configuration Steps
 
 ### Step 1 (Etherchannel LACP Configuration)
@@ -200,10 +199,11 @@ SW2(config)# spanning-tree vlan 10 root secondary
 ```markdown
 SW3> enable
 SW3# configure terminal
-# Block Interface that Connected to PC
+# Enable BPDU Interface that Connected to PC
 SW3(config)# interface fastEthernet 0/2
-SW3(config)# spanning-tree portfast
 SW3(config)# spanning-tree bpduguard enable
+# portfast STP
+SW3(config)# spanning-tree portfast
 SW3(config)# exit
 ```
 
