@@ -3,6 +3,7 @@
 **Task:**
 
 ![image](https://github.com/diotriandika/learn-networking/assets/109568349/f5ad8538-8e95-4d41-a0d2-dfc720dd5b9e)
+
 ## Addressing Configuration Steps
 
 > according to Appendix 
