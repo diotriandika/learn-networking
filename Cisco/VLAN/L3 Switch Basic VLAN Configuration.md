@@ -6,7 +6,7 @@ Konfigurasi L3 Switch kurang lebih sama seperti konfigurasi L2 Switch + Router. 
 
 Topologi :
 
-![image-20230925213125745](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925213125745.png)
+![image-20230925213125745](https://github.com/diotriandika/learn-networking/assets/109568349/c3cad239-82ec-46f1-bc6c-f9377b07d157)
 
 VLAN Table:
 
@@ -78,4 +78,5 @@ Switch# show running-config | sec vlan
 ```
 
 Coba untuk ping ke L3 Switch
+Coba untuk ping ke PC-2 dan sebaliknya
 
