@@ -4,7 +4,7 @@
 
 Sebagai contoh, disini saya menggunakan Cisco Packet Tracer sebagai perangkat simulasi dengan Topologi :
 
-![image-20230925204038321](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925204038321.png)
+<img width="624" alt="image" src="https://github.com/diotriandika/learn-networking/assets/109568349/6b9d70dc-eee0-4629-826b-42226bad12a4">
 
 VLAN Table :
 
