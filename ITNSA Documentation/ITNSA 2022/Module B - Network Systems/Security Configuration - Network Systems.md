@@ -2,7 +2,7 @@
 
 **Task:**
 
-![image-20230925114846259](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925114846259.png)
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/d145a028-b460-4304-ad29-8265681cd48b)
 
 ## ASA Firewall Configuration Steps
 
@@ -25,3 +25,9 @@ FW1(config-if)# security-level 100
 FW1(config-if)# exit
 ```
 
+### Verification
+Check by pinging host by host
+Also check the Nat Translation by running
+```markdown
+FW1# show ip nat translations
+```
