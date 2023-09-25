@@ -2,7 +2,7 @@
 
 **Task:**
 
-![image-20230925101805008](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230925101805008.png)
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/527ee51a-a238-413c-90df-626e3a43a3c2)
 
 ## DHCP Server Configuration Steps
 
@@ -14,7 +14,7 @@
 R3> enable
 R3# configure terminal
 
-# Create Exluded Address
+# Create Excluded Address
 R3(config)# ip dhcp excluded-address 192.168.20.1 192.168.20.10
 
 # Create DHCP Pool VLAN20
