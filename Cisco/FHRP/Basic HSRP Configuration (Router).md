@@ -2,11 +2,12 @@
 
 **HSRP** atau **Hot Standby Router Protocol** adalah protokol redudancy milik Cisco yang menetapkan sebuah router secara otomatis untuk menagmbil alih jika router yang lain gagal, dalam hal ini Router didefinisikan menjadi dua status, yaitu **Active** dan **Standby**. Router standby digunakan sebagai redudancy dari router active jika router active gagal merouting atau bahkan down. HSRP dirancang untuk memungkinkan failover secara transparan.
 
- Salah satu fitur dari HSRP yaitu dapat dikonfigurasi untuk menyediakan Layer 3 redundansi untuk network host. Dua router interface bekerja sama untuk menyajikan 1 virtual router atau default gateway untuk host di LAN, jadi ketika salah satu router down yang di konfigurasi HSRP link pada jaringan tersebut akan tetap berjalan, di karenakan ip gateway yang di kenal host adalah **virtual router**.
+Salah satu fitur dari HSRP yaitu dapat dikonfigurasi untuk menyediakan Layer 3 redundansi untuk network host. Dua router interface bekerja sama untuk menyajikan 1 virtual router atau default gateway untuk host di LAN, jadi ketika salah satu router down yang di konfigurasi HSRP link pada jaringan tersebut akan tetap berjalan, di karenakan ip gateway yang di kenal host adalah **virtual router**.
 
 **Topologi:** 
 
-![image-20230926152523634](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926152523634.png)
+![image-20230926152523634](https://github.com/diotriandika/learn-networking/assets/109568349/88f89882-fb88-4f2e-9d0e-ef41bf09670d)
+
 
 **Addressing Table:**
 
