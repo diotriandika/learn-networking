@@ -41,7 +41,7 @@ Switch(config-vlan)# vlan 20
 Switch(config-vlan)# name VLAN20
 Switch(config-vlan)# exit
 
-# Tambahkan IP Address pada masing - masing Interface VLAN
+# Tambahkan IP Address pada masing - masing SVI
 # VLAN 10
 Switch(config)# interface vlan 10
 Switch(config-if)# description VLAN 10 Default Gateway (optional)
