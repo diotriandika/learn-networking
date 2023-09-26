@@ -2,7 +2,8 @@
 
 Topologi:
 
-![image-20230926205100129](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926205100129.png)
+![image-20230926205100129](https://github.com/diotriandika/learn-networking/assets/109568349/19a92afb-e8d9-4e14-b68b-31034bb2bd93)
+
 
 Addressing Table:
 
