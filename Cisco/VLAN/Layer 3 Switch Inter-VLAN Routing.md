@@ -4,7 +4,7 @@ Menggunakan L3 Switch atau Multilayer Switch merupakan cara yang paling efektif 
 
 Topologi:
 
-![image-20230926090233746](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926090233746.png)
+![image-20230926090233746](https://github.com/diotriandika/learn-networking/assets/109568349/c5ea943f-2967-4f00-88b9-868394aca3a8)
 
 VLAN Table
 
