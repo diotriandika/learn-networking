@@ -11,3 +11,4 @@ Referensi Lengkap :
 - https://www.techtarget.com/searchnetworking/definition/spanning-tree-protocol#:~:text=Spanning%20Tree%20Protocol%20(STP)%20is,LAN)%20that%20contains%20redundant%20paths.
 - https://www.geeksforgeeks.org/root-bridge-election-in-spanning-tree-protocol/
 - https://citraweb.com/artikel_lihat.php?id=226
+- https://www.ciscopress.com/articles/article.asp?p=2832407&seqNum=4 (bagus)
