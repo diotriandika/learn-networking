@@ -8,7 +8,7 @@ Dalam LACP, agar dapat terbentuk sebiah channel group, salah satunya harus ada y
 
 Topologi:
 
-![image-20230926135831260](https://github.com/diotriandika/learn-networking/assets/109568349/c3a693e8-7e85-4195-951b-96fc926bcdd8)
+![image-20230926134942074](https://github.com/diotriandika/learn-networking/assets/109568349/24f82b28-b9e4-44c5-96c5-28962cf030f5)
 
 
 Sebelum dikonfigurasi, terlihat pada topologi diatas bahwa salah satu interface diblock secara otomatis oleh STP agar tidak terjadi frame looping. Agar STP membaca bahwa kedua interface tersebut menjadi 1 interface kita akan melakukan konfigurasi dibawah
@@ -49,7 +49,7 @@ SW2(config-if-range)# exit
 
 ### Verifikasi
 
-![image-20230926135831260](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926135831260.png)
+![image-20230926135831260](https://github.com/diotriandika/learn-networking/assets/109568349/c3a693e8-7e85-4195-951b-96fc926bcdd8)
 
 Sekarang kedua interface tersebut statusnya sudah hijau yang menandakan bahwa kedua interface tersebut tidak lagi diblokir oleh protokol STP. Kita bisa cek status dari etherchannel dengan menjalankan perintah
 
