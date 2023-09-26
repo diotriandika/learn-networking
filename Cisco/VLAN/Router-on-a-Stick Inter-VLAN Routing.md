@@ -4,7 +4,7 @@ Router-on-a-Stick Inter-VLAN Routing mengatasi keterbatasan dari Legacy Inter-VL
 
 Topologi : 
 
-![image-20230926081715721](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926081715721.png)
+![image-20230926081715721](https://github.com/diotriandika/learn-networking/assets/109568349/5a09a373-6ef3-4134-a064-b37d78a5fa02)
 
 VLAN Table: 
 
