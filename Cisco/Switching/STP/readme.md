@@ -1,5 +1,5 @@
 # Apa itu STP (Spanning Tree Protocol)?
-STP atau Spanning Tree Protocol adalah sebuah protokol yang berada di jaringan switch yang dimanan bertugas untuk menghindari terjadinya frame looping ketika mengimplementasikan topologi redudansi. STP melakukan monitoring pada network dan memastikan bahwa tidak terjadi loop dengan cara mematikan atau Blocking salah satu link redudant. Secara default, STP aktif pada semua port dan secara otomatis membuat salah satu switch menjadi Root Bridge. 
+STP atau Spanning Tree Protocol adalah sebuah protokol yang berada di jaringan switch yang dimanan bertugas untuk menghindari terjadinya frame looping ketika mengimplementasikan topologi redudansi. STP juga biasanya diguankan dalam jaringan yang menggunakan dua atau lebih jalur untuk menuju ke satu tujuan yang sama. STP melakukan monitoring pada network dan memastikan bahwa tidak terjadi loop dengan cara mematikan atau Blocking salah satu link redudant. Secara default, STP aktif pada semua port dan secara otomatis membuat salah satu switch menjadi Root Bridge. 
 
 Root Bride dari Spanning Tree adalah bridge dengan ID terkecil atau terendah. Tiap bridge mempunyai Unique Identifier (ID) dan sebuah priority number yang bisa dikonfigurasi. Root Bridge ini berperan sebagai penentu dari arahnya paket / jalur network yang ada.
 
