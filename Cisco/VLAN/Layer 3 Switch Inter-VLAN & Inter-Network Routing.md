@@ -1,10 +1,10 @@
-# Layer 3 Switch Inter-VLAN Routing (with Router)
+# Layer 3 Switch Inter-VLAN & Inter-Network Routing
 
 Agar VLAN dapat diakses oleh Device Layer 3 lain, VLAN tersebut harus menggunakan static atau dynamic routing agar keduanya bisa saling terhubung. Untuk mengaktifkan routing pada layer 3 Switch, sebuah port yang sudah dirouting harus terkonfigurasi. 
 
 Topologi:
 
-![image-20230926100711077](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926100711077.png)
+![image-20230926100711077](https://github.com/diotriandika/learn-networking/assets/109568349/831d4be0-2a08-4fa0-941b-dc042cc5994c)
 
 VLAN Table:
 
