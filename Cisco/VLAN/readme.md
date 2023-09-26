@@ -1,5 +1,5 @@
 # Apa itu VLAN?
-**VLAN** atau **Virtual Local Area Network** secara garis besar bertugas untuk memisah membagi sebuah LAN menjadi beberapa kelompok. Ini bertujuan untuk menghemat penggunaan IP dan yang paling sering agar tidak menggunakan terlalu banyak Network Device untuk membangun sebuah jaringan.
+**VLAN** atau **Virtual Local Area Network** secara garis besar bertugas untuk memisah membagi sebuah LAN menjadi beberapa kelompok atau segmen. Ini bertujuan untuk menghemat penggunaan IP dan yang paling sering agar tidak menggunakan terlalu banyak Network Device untuk membangun sebuah jaringan.
 
 # Apa itu Inter-VLAN Routing?
 
