@@ -1,10 +1,15 @@
 # Basic EtherChannel Configuration (LACP)
 
 Dalam LACP, agar dapat terbentuk sebiah channel group, salah satunya harus ada yang berperan sebagai Active atau Passive
+- Active mode : When the LACP is operating in active mode on either end of a link, both ports can send PDUs. The "active" LACP initiates an LACP connection by sending LACPDUs. The "passive" LACP will wait for the remote end to initiate the link
+- Passive Mode : When the LACP is operating in passive mode on a local member port and as its peer port, both ports cannot send PDUs
+
+[Source](https://www.arubanetworks.com/techdocs/AOS-CX/10.11/HTML/link_aggregation/Content/Chp_LAG/lac-ope-mod.htm)
 
 Topologi:
 
-![image-20230926134942074](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230926134942074.png)
+![image-20230926135831260](https://github.com/diotriandika/learn-networking/assets/109568349/c3a693e8-7e85-4195-951b-96fc926bcdd8)
+
 
 Sebelum dikonfigurasi, terlihat pada topologi diatas bahwa salah satu interface diblock secara otomatis oleh STP agar tidak terjadi frame looping. Agar STP membaca bahwa kedua interface tersebut menjadi 1 interface kita akan melakukan konfigurasi dibawah
 
