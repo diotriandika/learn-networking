@@ -17,8 +17,7 @@ Referensi (lengkap):
 
 **Topologi:**
 
-![Uploading image-20230927092233996.png…]()
-
+![image-20230927092233996](https://github.com/diotriandika/learn-networking/assets/109568349/4ad4777d-1a11-48cb-97aa-48e1d4ae2ca4)
 
 Addressing Table:
 
