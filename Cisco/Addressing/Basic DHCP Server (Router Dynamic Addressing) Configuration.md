@@ -4,7 +4,8 @@ DHCP atau (Dynamic Host Configuration Protocol) Server adalah sebuah protokol ya
 
 Topology:
 
-![image-20230927190317562](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230927190317562.png)
+![image-20230927190317562](https://github.com/diotriandika/learn-networking/assets/109568349/581da722-d473-409d-a1d7-ad7885fb22b8)
+
 
  Addressing Table
 
@@ -56,7 +57,7 @@ Router(dhcp-config)#exit
 > - domain-name : Merupakan parameter untuk nama domain default yang akan diberikan kepada DHCP Client
 > - no <option> : merupakan parameter untuk menghapus informasi terkait <option> yang ingin dihilangkan. Contohnya jika ingin menghapus default gateway
 >
-> ```
+> ```markdown
 > Router(dhcp-config)# no default-router
 > ```
 
