@@ -4,7 +4,7 @@ Karena multilayer switch berada pada Layer 2 dan Layer 3, ini mengizinkan untuk 
 
 Topologi:
 
-![image-20230927201246770](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230927201246770.png)
+![image-20230927201246770](https://github.com/diotriandika/learn-networking/assets/109568349/b882bb13-58b7-4d02-b5b9-d190d3ac6c75)
 
 VLAN Table:
 
