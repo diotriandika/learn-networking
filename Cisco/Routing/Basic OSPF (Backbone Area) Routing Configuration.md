@@ -17,7 +17,8 @@ Referensi (lengkap):
 
 **Topologi:**
 
-![image-20230927092233996](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230927092233996.png)
+![Uploading image-20230927092233996.png…]()
+
 
 Addressing Table:
 
