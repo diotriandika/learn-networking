@@ -46,7 +46,7 @@ Membuat sebuah access list, access list dapat didefinisikan dengan menggunakan s
 
   ```kotlin
   // Menggunakan Sistem Penomoran 
-  Router(config)# access-list <1-99> <permit/deny> ...
+  Router(config)# access-list <100-199> <permit/deny> ...
   
   // Menggunakan Sistem Penamaan 
   Router(config)# ip access-list <extended> <nama-acl>
