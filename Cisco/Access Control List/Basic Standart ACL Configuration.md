@@ -23,7 +23,7 @@ Referensi :
 
 Topology Scenario:
 
-![image-20230928233907030](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230928233907030.png)
+![image-20230928233907030](https://github.com/diotriandika/learn-networking/assets/109568349/c6cc5c5c-7808-4f34-ac59-b80b169ef902)
 
 Addressing Table:
 
@@ -43,7 +43,7 @@ Task :
 
 - Deny Kobo from accessing SRV
 - Deny BTR Network from accessing SRV
-- Permit all other user available
+- Permit all other users available
 
 ## Basic Standart ACL Configuration Steps
 
