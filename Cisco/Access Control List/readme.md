@@ -24,7 +24,7 @@ Sebelum bisa berfungsi dengan baik, access list harus diterapkan pada interface 
 ```kotlin
 // Sebagai Contoh Penempatan ACL
 interface gigabitEthernet 0/1
-ip access-group 10 inside/outside
+ip access-group 10 <in/out>
 ```
 
 Dalam pengimlemetasian ACL, ketika adanya paket yang tidak cocok dengan Rule atau List  ACL secara otomatis paket tersebut akan ditolak. Inilah yang disebut dengan Implicit Deny.
