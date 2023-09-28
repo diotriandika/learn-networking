@@ -12,11 +12,12 @@ Pada static NAT ada beberapa hal yang perlu diperhatikan yakni:
 Referensi : 
 
 - https://www.ciscopress.com/articles/article.asp?p=25273&seqNum=4
-- Thanks chatGPT :)
+- YouTube dancourses
+- chatGPT :)
 
 Topologi:
 
-![image-20230928093902037](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230928093902037.png)
+![image-20230928093902037](https://github.com/diotriandika/learn-networking/assets/109568349/1c4c87b5-529c-4815-88d2-c212ccc7b68c)
 
 Addressing Table:
 
