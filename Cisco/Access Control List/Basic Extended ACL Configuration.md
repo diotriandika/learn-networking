@@ -6,7 +6,7 @@ Extended ACL menggunakan penomoran `100-199` dan biasanya diaplikasikan pada int
 
 Scenario Topology:
 
-![image-20230929114134396](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230929114134396.png)
+![image-20230929114134396](https://github.com/diotriandika/learn-networking/assets/109568349/a233628d-4d00-496a-ac17-285313adadeb)
 
 Addressing Table :
 
