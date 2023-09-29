@@ -94,6 +94,19 @@ L3SW(config)# interface vlan 20
 L3SW(config-if)# ip address 192.168.20.1 255.255.255.0
 L3SW(config-if)# description Default Gateway VLAN20
 L3SW(config-if)# exit
+
+# Berikan VLAN Access pada Interface
+# VLAN 10
+L3SW(config)# interface fastEthernet 0/1
+L3SW(config-if)# switchport mode access
+L3SW(config-if)# switchport access vlan 10
+L3SW(config-if)# exit
+
+# VLAN 20
+L3SW(config)# interface fastEthernet 0/2
+L3SW(config-if)# switchport mode access
+L3SW(config-if)# switchport access vlan 20
+L3SW(config-if)# exit
 ```
 
 #### Verifikasi
