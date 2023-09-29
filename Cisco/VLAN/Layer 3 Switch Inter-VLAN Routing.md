@@ -4,7 +4,7 @@ Menggunakan L3 Switch atau Multilayer Switch merupakan cara yang paling efektif 
 
 Topologi:
 
-![image-20230926090233746](https://github.com/diotriandika/learn-networking/assets/109568349/c5ea943f-2967-4f00-88b9-868394aca3a8)
+![image-20230926090233746](https://github.com/diotriandika/learn-networking/assets/109568349/85adbe6b-543d-4a1a-9fd3-2365386493ce)
 
 VLAN Table
 
