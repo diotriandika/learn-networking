@@ -4,7 +4,7 @@ Radius (Remote Authentication Dial-In User Service) adalah protokol yang digunak
 
 Berikut rangkaian kinerja singkat mengenai Radius Server.
 
-![image-20230930074604869](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20230930074604869.png)
+![image-20230930074604869](https://github.com/diotriandika/learn-networking/assets/109568349/e1d01c93-142a-4ba4-9943-822317e702c0)
 
 > 1. User menginitiasi PPP otentikasi ke NAS (Network Access Server)
 > 2. NAS menginformasikan user untuk menggunakan Username dan Password (jika menggunakan PAP) atau Challenge (jika menggunakan CHAP)
