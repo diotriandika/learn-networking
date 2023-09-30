@@ -1,4 +1,4 @@
-# Basic IPSec VPN Tunnel Configuration
+# Basic IPSec VPN Tunnel Configuration (MASIH BERMASALAH)
 
 > Karena sedikitnya informasi terkait dengan IPsec, jadi saya jelaskan disini secara general.
 
@@ -13,7 +13,6 @@ Lebih jelasnya bisa cek :
 - https://www.ciscopress.com/articles/article.asp?p=24833&seqNum=3
 - https://www.ciscopress.com/articles/article.asp?p=24833&seqNum=6
 
-- dancourses youtube
 
 Topologi:
 
