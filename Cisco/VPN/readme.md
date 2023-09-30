@@ -2,6 +2,8 @@
 
 VPN (Virutal Private Network) merupakan teknologi yang digunakan untuk menciptakan koneksi internet yang aman dan pribadi melalui jaringan publik seperti halnya internet. Dalam Cisco, VPN biasanya digunakan untuk mengamankan traffic untuk remote, komunikasi data, dan akses resource secara aman.
 
+VPN mempermudah kita apabila harus bekerja walau sedang berada di luar kantor. Anda dapat mengakses file, e-mail, dan database di kantor pusat dengan menggunakan jaringan VPN yang relatif lebih murah dan aman dibandingkan dengan mengkoneksikan diri langsung ke server kantor atau mengirim file melalui Internet.
+
 VPN menjaga sekuritas dan management policy yang sama seperti halnya Private Network. VPN juga merupakan salah satu cara yang paling efektif jika digunakan untuk mengamankan point-to-point connection antara remote user dan hal yang dituju.
 
 Secara umum terdapat beberapa protocol VPN yang sering dijumpai diantaranya :
