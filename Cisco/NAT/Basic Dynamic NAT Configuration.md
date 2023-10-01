@@ -118,4 +118,4 @@ Cek Translasi IP, dan coba lakukan ping dari Home-PC
 R2# show ip nat translation
 ```
 
-?? Ya intinya pokoknya ntr SRV-1 & SRV-2 bakal secara random ngambil IP Public yang tersedia. Yang booting duluan bakal dapat IP Pertama, dan berlanjut. Ini secara ga langsung membuat device lebih aman ketimbang 
+?? Ya intinya pokoknya ntr SRV-1 & SRV-2 bakal secara random ngambil IP Public yang tersedia. Yang booting duluan bakal dapat IP Pertama, dan berlanjut. Ini secara ga langsung membuat device lebih aman ketimbang nat static yang mana dia exchange 1 ip private ke 1 ip public
