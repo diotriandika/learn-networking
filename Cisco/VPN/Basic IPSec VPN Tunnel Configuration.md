@@ -1,4 +1,4 @@
-# Basic IPSec VPN Tunnel Configuration (MASIH BERMASALAH)
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/4217761f-62b3-4867-acce-93aa57964d09)# Basic IPSec VPN Tunnel Configuration 
 
 > Karena sedikitnya informasi terkait dengan IPsec, jadi saya jelaskan disini secara general.
 
@@ -62,46 +62,50 @@ Home(config)# ip route 0.0.0.0 0.0.0.0 202.10.17.1
 **ISP>**
 
 ```kotlin
-Home> enable
-Home# configure terimnal
+ISP> enable
+ISP# configure terimnal
 
 // Tambahkan IP Address (to Home Router)
-Home(config)# interface gigabitEthernet 0/0
-Home(config-if)# ip address 202.10.17.1 255.255.255.252
-Home(config-if)# description to Home Router
-Home(config-if)# no shutdown
-Home(config-if)# exit
+ISP(config)# interface gigabitEthernet 0/0
+ISP(config-if)# ip address 202.10.17.1 255.255.255.252
+ISP(config-if)# description to Home Router
+ISP(config-if)# no shutdown
+ISP(config-if)# exit
 
 // Tambahkan IP Address (to Office Router)
-Home(config)# interface gigabitEthernet 0/1
-Home(config-if)# ip address 202.20.17.1 255.255.255.252
-Home(config-if)# description to Office Router
-Home(config-if)# no shutdown
-Home(config-if)# exit
+ISP(config)# interface gigabitEthernet 0/1
+ISP(config-if)# ip address 202.20.17.1 255.255.255.252
+ISP(config-if)# description to Office Router
+ISP(config-if)# no shutdown
+ISP(config-if)# exit
+
+// Buat Routing Table untuk ke Home dan Office Network
+ISP(config)# ip route 192.168.10.0 255.255.255.0 202.10.17.2
+ISP(config)# ip route 172.16.65.0 255.255.255.240 202.20.17.2
 ```
 
 **Office>**
 
 ```kotlin
-Home> enable
-Home# configure terimnal
+Office> enable
+Office# configure terimnal
 
 // Tambahkan IP Address (to Public)
-Home(config)# interface gigabitEthernet 0/0
-Home(config-if)# ip address 202.20.17.2 255.255.255.252
-Home(config-if)# description to Public Network
-Home(config-if)# no shutdown
-Home(config-if)# exit
+Office(config)# interface gigabitEthernet 0/0
+Office(config-if)# ip address 202.20.17.2 255.255.255.252
+Office(config-if)# description to Public Network
+Office(config-if)# no shutdown
+Office(config-if)# exit
 
 // Tambahkan IP Address (to Office Network)
-Home(config)# interface gigabitEthernet 0/1
-Home(config-if)# ip address 172.16.65.1 255.255.255.240
-Home(config-if)# description Default Gateway Office Network
-Home(config-if)# no shutdown
-Home(config-if)# exit
+Office(config)# interface gigabitEthernet 0/1
+Office(config-if)# ip address 172.16.65.1 255.255.255.240
+Office(config-if)# description Default Gateway Office Network
+Office(config-if)# no shutdown
+Office(config-if)# exit
 
 // Buat Default Route
-Home(config)# ip route 0.0.0.0 0.0.0.0 202.20.17.1
+Office(config)# ip route 0.0.0.0 0.0.0.0 202.20.17.1
 ```
 
 #### Verifikasi
@@ -109,6 +113,13 @@ Home(config)# ip route 0.0.0.0 0.0.0.0 202.20.17.1
 Cek kembali konfigurasi IP
 
 Assign Address pada Home-PC dan Office-SRV sesuai dengan Appendix
+
+Coba untuk melakukan simulasi Packet Transfer dari Home-PC ke Office-SRV, dan lihat Informasi Packet ketika sampai di Router ISP
+
+Disini bisa kita lihat bahwa informasi dari packet semuanya masih terekspos oleh router.
+
+<img width="363" alt="image" src="https://github.com/diotriandika/learn-networking/assets/109568349/3899894c-55b9-4c03-98c3-51096b5064d7">
+
 
 ### Step 2 (Enable Security License)
 
@@ -247,15 +258,15 @@ Office(config)# crypto isakmp key Skills39 address 202.10.17.2
 **Home>**
 
 ```kotlin
-// Konfigurasi IPSec Transform Set dengan Tag Home-to-Office, ESP AES encryption 256 Key, dan HMAC-SHA Auth key hash.
-Home(config)# crypto ipsec transform-set Home-to-Office esp-aes 256 esp-sha-hmac
+// Konfigurasi IPSec Transform Set dengan Tag Home-Office, ESP AES encryption 256 Key, dan HMAC-SHA Auth key hash.
+Home(config)# crypto ipsec transform-set Home-Office esp-aes 256 esp-sha-hmac
 ```
 
 **Office>**
 
 ```kotlin
-// Konfigurasi IPSec Transform Set dengan Tag Office-to-Home, ESP AES encryption 256 Key, dan HMAC-SHA Auth key hash.
-Office(config)# crypto ipsec transform-set Office-to-Home esp-aes 256 esp-sha-hmac
+// Konfigurasi IPSec Transform Set dengan Tag Office-Home, ESP AES encryption 256 Key, dan HMAC-SHA Auth key hash.
+Office(config)# crypto ipsec transform-set Office-Home esp-aes 256 esp-sha-hmac
 ```
 
 ### Step 6 (Setup Crypto Map)
@@ -263,8 +274,8 @@ Office(config)# crypto ipsec transform-set Office-to-Home esp-aes 256 esp-sha-hm
 **Home>**
 
 ```kotlin
-// Buat Crypto Map dengan Tag IPSec-Map, sequence entry bebas, dan gunakan ipsec-isakmp
-Home(config)# crypto map IPSec-Map 10 ipsec-isakmp
+// Buat Crypto Map dengan Tag IPSEC-MAP, sequence entry bebas, dan gunakan ipsec-isakmp
+Home(config)# crypto map IPSEC-MAP 10 ipsec-isakmp
 
 // Set Peer Address, yakni sama dengan ISAKMP Key Peer Address 
 Home(config-crypto-map)# set peer 202.20.17.2
@@ -276,7 +287,7 @@ Home(config-crypto-map)# set pfs group5
 Home(config-crypto-map)# set security-association lifetime seconds 86400
 
 // Set transform-set yakni Tag dari Tranfrom Set pada STEP 5
-Home(config-crypto-map)# set transform-set Home-to-Office
+Home(config-crypto-map)# set transform-set Home-Office
 
 // Enable ACL yang sudah dibuat
 Home(config-crypto-map)# match address 100
@@ -286,8 +297,8 @@ Home(config-crypto-map)# exit
 **Office>**
 
 ```kotlin
-// Buat Crypto Map dengan Tag IPSec-Map, sequence entry bebas, dan gunakan ipsec-isakmp
-Office(config)# crypto map IPSec-Map 10 ipsec-isakmp
+// Buat Crypto Map dengan Tag IPSEC-MAP, sequence entry bebas, dan gunakan ipsec-isakmp
+Office(config)# crypto map IPSEC-MAP 10 ipsec-isakmp
 
 // Set Peer Address, yakni sama dengan ISAKMP Key Peer Address 
 Office(config-crypto-map)# set peer 202.10.17.2
@@ -299,7 +310,7 @@ Office(config-crypto-map)# set pfs group5
 Office(config-crypto-map)# set security-association lifetime seconds 86400
 
 // Set transform-set yakni Tag dari Tranfrom Set pada STEP 5
-Office(config-crypto-map)# set transform-set Office-to-Home
+Office(config-crypto-map)# set transform-set Office-Home
 
 // Enable ACL yang sudah dibuat
 Office(config-crypto-map)# match address 100
@@ -313,7 +324,7 @@ Office(config-crypto-map)# exit
 ```kotlin
 // Aplikasikan Crypto-Map yang sudah dibuat ke Outside Interface Router
 Home(config)# interface gigabitEthernet 0/0
-Home(config-if)# crypto map IPSec-Map
+Home(config-if)# crypto map IPSEC-MAP
 Home(config-if)# exit
 ```
 
@@ -322,7 +333,7 @@ Home(config-if)# exit
 ```kotlin
 // Aplikasikan Crypto-Map yang sudah dibuat ke Outside Interface Router
 Office(config)# interface gigabitEthernet 0/0
-Office(config-if)# crypto map IPSec-Map
+Office(config-if)# crypto map IPSEC-MAP
 Office(config-if)# exit
 ```
 
