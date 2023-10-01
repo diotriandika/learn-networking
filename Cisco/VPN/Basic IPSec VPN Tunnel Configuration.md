@@ -1,4 +1,4 @@
-![image](https://github.com/diotriandika/learn-networking/assets/109568349/4217761f-62b3-4867-acce-93aa57964d09)# Basic IPSec VPN Tunnel Configuration 
+# Basic IPSec VPN Tunnel Configuration 
 
 > Karena sedikitnya informasi terkait dengan IPsec, jadi saya jelaskan disini secara general.
 
@@ -16,7 +16,7 @@ Lebih jelasnya bisa cek :
 
 Topologi:
 
-
+<img width="488" alt="image" src="https://github.com/diotriandika/learn-networking/assets/109568349/7e729a33-2726-4b6a-b9f6-579f5e368dd6">
 
 Addressing Table:
 
@@ -114,7 +114,7 @@ Cek kembali konfigurasi IP
 
 Assign Address pada Home-PC dan Office-SRV sesuai dengan Appendix
 
-Coba untuk melakukan simulasi Packet Transfer dari Home-PC ke Office-SRV, dan lihat Informasi Packet ketika sampai di Router ISP
+Coba untuk melakukan simulasi PDU Transfer dari Home-PC ke Office-SRV, dan lihat Informasi Packet ketika sampai di Router ISP
 
 Disini bisa kita lihat bahwa informasi dari packet semuanya masih terekspos oleh router.
 
@@ -342,4 +342,10 @@ Office(config-if)# exit
 Coba lakukan ping dari Home-PC ke Office-SRV
 
 > Memang terjadi delay yang cukup lama yang menyebabkan Request timed out dalam beberapa packet, namun akan normal kembali.
+
+Coba lakukan lagi simulasi PDU Tranfering dari Home-PC ke Office-PC
+
+Lihat Informasi PDU ketika sudah sampai di Router ISP, kita bisa lihat bahwa sekarang Packet tersebut memiliki Header tambahan yang terenkripsi
+
+<img width="376" alt="image" src="https://github.com/diotriandika/learn-networking/assets/109568349/2331618b-cc8d-42b7-befc-d94127136a89">
 
