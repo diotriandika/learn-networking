@@ -33,7 +33,7 @@ Addressing Table:
 
 ## Basic Static NAT Configuration
 
-### Step 1 (Addressing)
+### Step 1 (Addressing & Basic Configuration)
 
 **R1>**
 
@@ -52,6 +52,9 @@ R1(config)# interface gigabitEthernet 0/0
 R1(config-if)# description Interface Connected to Private
 R1(config-if)# ip address 172.16.65.1/24
 R1(config-if)# exit
+
+// Tambahkan Default Route atau kalian bisa menggunakan Static Route, OSPF dkk
+R1(config)# ip route 0.0.0.0 0.0.0.0 202.10.17.2
 ```
 
 **R2>**
@@ -71,6 +74,9 @@ R1(config)# interface gigabitEthernet 0/0
 R1(config-if)# description Interface Connected to Private
 R1(config-if)# ip address 192.168.10.1/24
 R1(config-if)# exit
+
+// Tambahkan Default Route atau kalian bisa menggunakan Static Route, OSPF dkk
+R1(config)# ip route 0.0.0.0 0.0.0.0 202.10.17.1
 ```
 
 #### Verifikasi
@@ -84,9 +90,6 @@ Tambahkan IP Address untuk SRV dan PC1
 **R1>**
 
 ```kotlin
-// Tambahkan Default Route pada R1 agar Network Public R1 terdiscover oleh Netowrk R2
-R1(config)# ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0
-
 // Definisikan NAT Inside dan NAT Outside
 // NAT Inside (Interface Private Network)
 R1(config)# interface gigabitEthernet 0/0
@@ -116,7 +119,7 @@ R1(config)# ip nat inside source static 172.16.65.10 202.10.17.10
 
 Sekarang coba untuk melakukan ping ke 172.16.65.10
 
-Pasti Hasilnya nihil, namun ketika kita coba untuk melakukan ping ke 202.10.17.10, kita mendapatkan reply atau coba untuk akses Web Server Default.
+Outputnya yang Reply itu pasti bukan `172.16.65.10` akan tetapi `202.10.17.10`, ini berarti Static NAT berhasil, ini membuat Device yang menggunkan Static NAT menjadi lebih aman. Coba juga untuk melakukan ping ke `202.10.17.10`
 
 ```kotlin
 // Verifikasi dengan
@@ -129,7 +132,7 @@ tcp 02.10.17.10:80     02.10.17.10:80    192.168.10.10:1038 192.168.10.10:1038
 
 ### Tip
 
-Kita juga bisa mencoba mengakses server lain dengan contoh SRV2
+Kita juga bisa mencoba mengakses server lain dengan IP dengan contoh SRV2
 
 ```kotlin
 // Tambahkan Port untuk Akses Web Server
