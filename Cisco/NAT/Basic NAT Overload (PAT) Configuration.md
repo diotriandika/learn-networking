@@ -22,3 +22,4 @@ access-list 10 permit <source-network> <wildcard-mask>
 // Overloading NAT
 ip nat inside source list 10 interface <outside-interface> overload
 ```
+# Ntar buat contoh labnya, ini yang paling mudah diantara ketiga tipe nat tapi yang paling punya impact buat implementasinya 
