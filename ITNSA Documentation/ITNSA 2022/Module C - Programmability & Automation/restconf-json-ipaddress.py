@@ -5,7 +5,7 @@ from urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 response = requests.put(
-        url = 'https://10.10.10.10/restconf/data/Cisco-IOS-XE-native/interface/Loopback=8888',
+        url = 'https://10.10.10.10/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback=8888',
         auth = ('admin','cisco'),
         headers = {
                 'Accept': 'application/yang-data+json',
@@ -26,4 +26,4 @@ response = requests.put(
                   }
                 }
         ),verify = False)
-print('Response Code: ' + str(response.status_code)) # Output verifikasi jika script json berjalan
+print('Response Code: ' + str(response.status_code)) # Output verifikasi HTTP
