@@ -1,4 +1,3 @@
-```python
 import requests
 import json
 
@@ -28,4 +27,3 @@ response = requests.put(
                 }
         ),verify = False)
 print('Response Code: ' + str(response.status_code)) # Output verifikasi jika script json berjalan
-```
