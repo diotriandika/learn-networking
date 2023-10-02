@@ -1,0 +1,18 @@
+version: "3"
+services:
+ proteus-registry:
+  container_name: proteus-registry
+  image: registry:2.7.0
+  ports:
+   - "1234:5000"
+  environment:
+   REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /mnt/
+   REGISTRY_AUTH: htpasswd
+   REGISTRY_AUTH_HTPASSWD_REALM: "registry"
+   REGISTRY_AUTH_HTPASSWD_PATH: /authentication/registry.pass
+   REGISTRY_HTTP_TLS_CERTIFICATE: /certificate/ca.crt
+   REGISTRY_HTTP_TLS_KEY: /certificate/ca.key
+  volumes:
+  - /mnt/registry:/var/lib/registry
+  - /mnt/authentication:/authentication
+  - /mnt/certificate:/certificate
