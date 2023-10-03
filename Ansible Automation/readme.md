@@ -12,7 +12,7 @@ Ansible mengotomasikan managemen dari remote system dan sekaligus mengontrol ses
 
 - Control Node
 
-  Sebuah system dimana Ansible terinstal. Sebagai contoh kita bisa menjalankan command ansible seperti `ansible	` atau `ansible-inventory` didalam Control Node.
+  Sebuah system dimana Ansible terinstal. Sebagai contoh kita bisa menjalankan command ansible seperti `ansible` ,`ansible-playbooks` atau `ansible-inventory` didalam Control Node.
 
 - Managed Node
 
@@ -21,3 +21,6 @@ Ansible mengotomasikan managemen dari remote system dan sekaligus mengontrol ses
 - Inventory
 
   Sebuah list yang berisi Managed Node yang secara logis terorganize. Kita bisa membuat inventory pada Control Node untuk mendefinisikan host deployments kepada Ansible.
+
+Ansible bekerja dengan menghubungkan ke nodes (client, servers atau apapun itu yang ingin dikonfigurasi) dalam sebuah network, lalu mengirimkan sebuah program yang bernama Ansible Module ke node tersebut. Ansible mengekesusi module tersebut melalui SSH dan menghilangkan module tersebut jika selesai. Dalam melakukan hal ini, Ansible Control Node hanya memerlukan akses login ke Managed Node untuk melakukan semua task yang diperlukan. 
+
