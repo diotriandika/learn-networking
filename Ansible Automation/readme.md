@@ -1,25 +1,23 @@
 # Apa itu Ansible?
 
-Ni dah bagus ada contoh kasusnya
+Ansible adalah sebuah tools untuk automasi IT. Ansible dapat mengkonfigurasi system, deploy software, and orchestrate task IT yang lebih advance seperti layaknya continuous deployments.
 
-- https://btech.id/news/ansible-definisi-fungsi-cara-kerja-dan-keuntungan-menggunakannya/
-- https://medium.com/dot-intern/configuration-management-dengan-ansible-case-study-dcd0fe925064
-- https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
+> Continuous Deployment (CD) atau Continuous Delivery (CD) adalah **praktek pengiriman perangkat lunak ke lingkungan produksi secara otomatis setelah melalui tahap integrasi, pengujian, dan verifikasi**
 
+Tujuan utama dari Ansible adalah Simplicity dan Ease-of-Use. Ansible juga fokus dalam sekuritas dan realibilitas, menggunakan OpenSSH sebagai teransport yang memberikan sekuritas lebih ketika melakukan remote login.
 
+## Getting Started with Ansible
 
-Dalam menggunakan Ansible terdapat 2 hal utama yang diperlukan, yakni Inventory dan Playbook.
+Ansible mengotomasikan managemen dari remote system dan sekaligus mengontrol sesuai dengan status yang diperlukan. Dalam environment Ansible terdapat tiga komponen utama, yakni
 
-# Apa tuh Inventory?
+- Control Node
 
-Intinya Inventory adalah tempat dimana kita menyimpan data alamat dari host/server yang akan kita konfigurasi nantinya (anggep aja kontak), dalemnya ada Group yang berisi List Host. Ansible akan mengambil List Host dari Inventory yang akan dimasukan kedalam Playbook untuk melakukan konfigurasi
+  Sebuah system dimana Ansible terinstal. Sebagai contoh kita bisa menjalankan command ansible seperti `ansible	` atau `ansible-inventory` didalam Control Node.
 
-- https://www.peladen.web.id/server/2021/06/01/membuat-ansible-inventory.html#:~:text=Ansible%20inventory%20merupakan%20suatu%20file,ke%20lebih%20dari%20satu%20grup.
+- Managed Node
 
+  Sebuah remote system atau host yang dikontrol oleh Ansible.
 
+- Inventory
 
-# Apa tuh Playbook?
-
-Playbook adalah tempat untuk mendefinisikan berbagai konfigurasi yang akan dijalankan ke target server/host.
-
-Ntar lanjut, masih nyangklek
+  Sebuah list yang berisi Managed Node yang secara logis terorganize. Kita bisa membuat inventory pada Control Node untuk mendefinisikan host deployments kepada Ansible.
