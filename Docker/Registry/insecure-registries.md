@@ -17,7 +17,7 @@ root@srv1:/home/competitor/httpd# nano /etc/docker/daemon.json
 ```
 ```json
 {
-        "insecure-registries" : [https://srv1.artemis.local:1234]
+        "insecure-registries" : ["https://srv1.artemis.local:1234"]
 }
 ```
 then restart Docker
