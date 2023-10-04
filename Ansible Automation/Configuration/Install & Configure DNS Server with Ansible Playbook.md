@@ -13,9 +13,9 @@ Dalam ansible, kita bisa melakukan instalasi dan sekaligus konfigurasi pada DNS 
 
 **Prequisites:**
 
-- Address Configured
+- IP Address Configured
 - Repository Updated
-- Python, SSH, Ansible Installed and for SSH already Configured.
+- Python & SSH Installed on all nodes
 
 **Appendix:** 
 
