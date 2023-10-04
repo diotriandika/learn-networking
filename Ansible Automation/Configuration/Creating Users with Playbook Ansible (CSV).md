@@ -10,9 +10,9 @@ Dalam ansible, kita bisa menggunakan Playbook untuk mengimport user ke Managed N
 
 **Prequisites:**
 
-- Address Configured
+- IP Address Configured
 - Repository Updated
-- Python, SSH, Ansible Installed and for SSH already Configured.
+- Python & SSH Installed on all nodes
 
 **Appendix:**
 
