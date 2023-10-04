@@ -64,7 +64,7 @@ $ cd /etc/ansible
 $ sudo nano hosts
 ```
 
-```ini
+```yaml
 # Disini saya menggunakan format YML/YAML
 # Mendefinisikan Group Managed Node
 all:
