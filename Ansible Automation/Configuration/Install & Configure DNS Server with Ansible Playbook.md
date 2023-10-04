@@ -1,4 +1,4 @@
-# (Ansible) Install & Configure DNS Server with Ansible Playbook
+# Install & Configure DNS Server with Ansible Playbook
 
 Dalam ansible, kita bisa melakukan instalasi dan sekaligus konfigurasi pada DNS Server yang berada dalam cakupan Managed Host. 
 
