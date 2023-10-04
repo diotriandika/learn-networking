@@ -94,7 +94,7 @@ Test koneksi ke node dengan module ping.o
 ```bash
 $ ansible all -m ping
 ```
-
+> Jika terjadi error, coba untuk assign fingerprint terlebih dahulu dengan cara menggunakan remote ssh ke node yang dituju. Kemudian logout dan coba lakukan verifikasi kembali.
 ### Step 2 (Create Playbook)
 
 #### HOST>
