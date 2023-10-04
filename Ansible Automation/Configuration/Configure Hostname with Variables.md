@@ -67,6 +67,7 @@ $ sudo nano hosts
 ```yaml
 # Disini saya menggunakan format YML/YAML
 # Mendefinisikan Group Managed Node
+
 all:
  children:
   hosts:
@@ -78,7 +79,6 @@ all:
     ansible_host: 10.22.0.2
     ansible_user: root
     ansible_password: Skills39
-
 ```
 
 > Jika ingin mengecek Inventory, jalankan:
@@ -141,9 +141,10 @@ $ sudo nano hosts # Specific path at /etc/ansible/hosts
 
 ###### hosts
 
-```ini
+```yaml
 # Disini saya menggunakan format YML/YAML
 # Mendefinisikan Group Managed Node
+
 all:
  children:
   hosts:
@@ -156,8 +157,7 @@ all:
     ansible_host: 10.22.0.2
     ansible_user: root
     ansible_password: Skills39
-    hostname: LIN2          # Tambahkan line baru untuk mengset Static Variable
-    
+    hostname: LIN2          # Tambahkan line baru untuk mengset Static Variable    
 ```
 
 ### Step 3 (Verify & Try to run the playbook)
