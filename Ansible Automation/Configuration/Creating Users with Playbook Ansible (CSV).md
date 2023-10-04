@@ -141,6 +141,8 @@ $ sudo ansible-playbook 7-users.yml
 - https://youtu.be/vd94qsmt5pA
 
 - https://serverfault.com/questions/850497/ansible-create-users-from-csv
+  
+- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_identity_management/managing-user-accounts-using-ansible-playbooks_configuring-and-managing-idm
 
   
 
