@@ -45,7 +45,15 @@ ansible_password: P@ssw0rd
 ```
 
 **Directory Tree :**
-
+```
+.
+└── etc/
+    └── ansible/
+        ├── linux/
+        ├── windows/
+        ├── hosts
+        └── .vault_pass
+```
 
 > The `.vault_pass` is encrypted with Ansible-Vault, so it has been hidden
 
