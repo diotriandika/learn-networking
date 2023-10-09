@@ -47,6 +47,5 @@ ansible_password: P@ssw0rd
 **Directory Tree :**
 
 
-
 > The `.vault_pass` is encrypted with Ansible-Vault, so it has been hidden
 
