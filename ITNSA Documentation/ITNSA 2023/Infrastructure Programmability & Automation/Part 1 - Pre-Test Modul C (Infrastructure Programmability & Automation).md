@@ -1,7 +1,5 @@
 # Pembahasan Pre-Test Modul C (Infrastructure Programmability & Automation) Part 1
-## Part 1 Linux
-
-### General Configuration
+## General Configuration
 
 **Step 1 - Create Directory**
 
@@ -20,7 +18,7 @@ debian@HOST:/etc/ansible$ ansible-vault encrypt .vault_pass
 
 > By default, we can't run ansible playbook while the needed variable/files encrypted with ansible-vault. We can usee `--ask-vault-pass` by the end of command line while executing the playbook
 
-### Hostname
+## Hostname
 
 **Step 1 - Create Playbook**
 
@@ -47,15 +45,15 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
      name: "{{ hostname }}"
 ```
 
-### nftables
+## nftables
 
 Skip dulu
 
-### DNS
+## DNS
 
-#### Configuring DNS Server -->>
+### Configuring DNS Server -->>
 
-#### **Step 1 - Create Playbook** - DNS Server
+### **Step 1 - Create Playbook** - DNS Server
 
 ```bash
 debian@HOST:/etc/ansible/linux$ sudo nano 3-dns-server.yml
@@ -82,7 +80,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 3-dns-server.yml
      state: present
 ```
 
-#### **Step 2 - Configuring DNS Master**
+### **Step 2 - Configuring DNS Master**
 
 > Install BIND9 pada HOST, cuma ngambil template aja
 
@@ -183,7 +181,7 @@ $TTL    604800
 251     IN      PTR     DEV-LIN.applix.com.
 ```
 
-#### **Step 3 - Configuring DNS Slave**
+### **Step 3 - Configuring DNS Slave**
 
 Copy `named.conf-master` to `named.conf-slave` as slave configuration
 
@@ -215,7 +213,7 @@ zone "0.22.10.in-addr.arpa"{
 };
 ```
 
-#### **Step 4 - Configure Playbook** - DNS Server
+### **Step 4 - Configure Playbook** - DNS Server
 
 Open playbook & Add Tasks
 
@@ -283,9 +281,9 @@ debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
 
 **Run Playbook**
 
-#### Configuring DNS Client -->>
+### Configuring DNS Client -->>
 
-#### Step 1 - Create Playbook - DNS Client
+### Step 1 - Create Playbook - DNS Client
 
 ```bash
 debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
@@ -312,9 +310,9 @@ debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
 
 **Run Playbook**
 
-### Web
+## Web
 
-#### Step 1 - Create Playbook
+### Step 1 - Create Playbook
 
 ```bash
 debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
@@ -336,7 +334,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
      state: present
 ```
 
-#### Step 2 - Create HTML Templates with Jinja2
+### Step 2 - Create HTML Templates with Jinja2
 
 **Create `index.html` template**
 
@@ -421,3 +419,51 @@ server {
 }
 ```
 
+### Step 3 - Configure Playbook 
+
+```bash
+debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
+```
+
+***5-web-server.yml***
+
+```yaml
+---
+- name: Setup Web
+  hosts: web
+  gather_facts: false
+  become: yes
+  vars_files: '/etc/ansible/.vault_pass'
+  tasks:
+  - name: Installing Nginx
+    apt:
+     name: nginx
+     state: present
+  - name: Copying Default Site Configuration
+    template:
+     src: /etc/ansible/templates/default.j2
+     dest: /etc/nginx/sites-enabled/default
+  - name: Copying Default Index
+    template:
+     src: /etc/ansible/tempates/index.j2
+     dest: /var/www/html/index.html
+  - name: Copying Intranet Site Configuration
+    template:
+     src: /etc/ansible/templates/default-intranet.j2
+     dest: /etc/nginx/sites-enabled/intranet
+  - name: Create Directory for Intranet
+    file:
+     path: /var/www/intranet
+     state: directory
+  - name: Copying Intranet Index
+    template:
+     src: /etc/ansible/templates/index-intranet.j2
+     dest: /var/www/intranet/index.html
+    notify: restart nginx
+- handlers:
+  name: restart nginx
+  service:
+   name: nginx
+   state: restarted
+```
+**Run Playbook**
