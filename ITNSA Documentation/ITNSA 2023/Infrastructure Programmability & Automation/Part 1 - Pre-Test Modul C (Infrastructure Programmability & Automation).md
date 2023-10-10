@@ -121,10 +121,15 @@ table inet LIN {
 		type filter hook input priority 0; policy drop;
 		ct state { established, related } accept
 		tcp dport { 80, 8080, 9090, 8081 } accept
-		ip saddr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } ip protocol tcp tcp dport ssh accept
-		ip saddr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } ip protocol icmp accept
 	}
+}
 
+table inet trusted {
+	chain INPUT {
+		type filter hook input priority 0; policy drop;
+		ct state { established, related } accept
+		ip saddr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } tcp dport { ssh, icmp } accept
+	}
 }
 ```
 
