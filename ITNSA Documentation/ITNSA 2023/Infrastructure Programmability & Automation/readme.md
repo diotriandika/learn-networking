@@ -45,6 +45,15 @@ ansible_user: user
 ansible_password: P@ssw0rd
 ```
 
+**users.csv**
+```plaintext
+Username,UID,First_name,Last_name,Groups,Password
+booker12,9012,Rachel,Booker,Operations,iambooker
+grey07,2070,Laura,Grey,Developers,iamgrey
+johnson81,4081,Craig,Johnson,Operations,iamjohnson
+jenkins46,9346,Mary,Jenkins,Developers,iamjenkins
+smith79,5079,Jamie,Smith,Operations,iamsmith
+```
 **Directory Tree :**
 ```
 .
@@ -55,6 +64,4 @@ ansible_password: P@ssw0rd
         ├── hosts
         └── .vault_pass
 ```
-
-> The `.vault_pass` is encrypted with Ansible-Vault, so it has been hidden
 
