@@ -1,4 +1,5 @@
 # Pembahasan Pre-Test Modul C (Infrastructure Programmability & Automation) Part 1
+
 ## General Configuration
 
 **Step 1 - Create Directory**
@@ -45,9 +46,60 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
      name: "{{ hostname }}"
 ```
 
-## nftables
+## nftables (terakhir)
 
-Skip dulu
+> eksekusi nftables terakhir, karena kita tidak tahu service apa saja yang perlu kita beri
+
+### Step 1 - Create Playbook
+
+```bash
+debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
+```
+
+***2-nftables.yml>***
+
+```yaml
+---
+- name: Filtering Traffic
+  hosts: LIN
+  become: yes
+  gather_facts: false
+  vars_files: '/etc/ansible/.vault_pass'
+  tasks:
+  - name: Copying nftables configuration
+    copy:
+     src: /etc/ansible/templates/nftables.conf
+     dest: /etc/nftables.conf
+  - name: Restarting Service
+    service:
+     name: nftables
+     state: restarted
+```
+
+### Step 2 - Create Configuration File
+
+```bash
+debian@HOST:/etc/ansible/templates$ sudo nano nftables.conf
+```
+
+***nftables.conf>***
+
+```jinja2
+#/usr/sbin/nft -f
+
+table inet LIN {
+	chain input {
+		type filter hook input priority 0; policy drop;
+		ct state { established, related } accept
+		tcp dport { 80, 8080, 9090, 8081 } accept
+		ip saddr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } ip protocol tcp tcp dport ssh accept
+		ip saddr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } ip protocol icmp accept
+	}
+
+}
+```
+
+**Run Playbook** 
 
 ## DNS
 
@@ -328,7 +380,8 @@ debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
   become: yes
   vars_files: '/etc/ansible/.vault_pass'
   tasks:
-  - name: Installing Nginx
+
+- name: Installing Nginx
     apt:
      name: nginx
      state: present
@@ -384,7 +437,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano index-intranet.j2
 Default Site
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano default.j2
+debian@HOST:/etc/ansible/templates$ sudo nano web-default.j2
 ```
 
 ***default.j2>***
@@ -434,20 +487,22 @@ debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
   gather_facts: false
   become: yes
   vars_files: '/etc/ansible/.vault_pass'
-  tasks:
+
+tasks:
   - name: Installing Nginx
     apt:
      name: nginx
      state: present
   - name: Copying Default Site Configuration
     template:
-     src: /etc/ansible/templates/default.j2
-     dest: /etc/nginx/sites-enabled/default
+     src: /etc/ansible/templates/web-default.j2
+     dest: /etc/nginx/sites-enabled/web-default
   - name: Copying Default Index
     template:
      src: /etc/ansible/tempates/index.j2
      dest: /var/www/html/index.html
-  - name: Copying Intranet Site Configuration
+ 
+ - name: Copying Intranet Site Configuration
     template:
      src: /etc/ansible/templates/default-intranet.j2
      dest: /etc/nginx/sites-enabled/intranet
@@ -460,10 +515,223 @@ debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
      src: /etc/ansible/templates/index-intranet.j2
      dest: /var/www/intranet/index.html
     notify: restart nginx
+
 - handlers:
   name: restart nginx
   service:
    name: nginx
    state: restarted
 ```
+
 **Run Playbook**
+
+## High Availability Intranet
+
+### Step 1 - Create Playbook
+
+```bash
+debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
+```
+
+***6-ha-intranet.yml>***
+
+```yaml
+---
+- name: High Availability
+  hosts: ha
+  become: yes
+  gather_facts: false
+  vars_files: '/etc/ansible/.vault_pass'
+  
+  tasks:
+  - name: Installing HAProxy & KeepAlived
+    apt: 
+     name: 
+     - haproxy
+     - keepalived
+     state: present
+```
+
+**Run playbook**
+
+### Step 2 - Create HAProxy & KeepAlived Configuration Template with Jinja2
+
+Keepalived
+
+```bash
+debian@HOST:/etc/ansible/templates$ sudo nano keepalived.conf.j2
+```
+
+***keepalived.conf.j2>***
+
+```jinja2
+vrrp_instance vrrp1 {
+	state MASTER
+	interface ens33
+	virtual_router_id 50
+	priority {{ priority }}
+	advert_int 1
+	authentication {
+		auth_type PASS
+		auth_pass P@ssw0rd
+	}
+	virtual_ipaddress {
+		10.22.0.51
+	}
+}
+```
+
+HAProxy
+
+```bash
+debian@HOST:/etc/ansible/templates$ sudo nano haproxy.cfg.j2
+```
+
+***haproxy.cfg.j2***
+
+```jinja2
+defaults
+	mode http
+	balance roundrobin
+	timeout client 30s
+
+frontend intranet_front
+	bind *:80
+	option forwardfor
+	default_backend intranet_back
+	http-request add-header x-haproxy-host %[req.hdr(Host)]
+backend intranet_back
+	server LIN3 10.22.0.3:8081 check
+	server LIN4 10.22.0.4:8081 check
+```
+
+### Step 3 - Adding New Variable
+
+**Inventory:**
+
+```ini
+LIN]
+LIN1 ansible_host=10.22.0.1 hostname=LIN1
+LIN2 ansible_host=10.22.0.2 hostname=LIN2
+LIN3 ansible_host=10.22.0.3 hostname=LIN3
+LIN4 ansible_host=10.22.0.4 hostname=LIN4
+DEV-LIN ansible_host=10.22.0.251 hostname=DEV-LIN
+[dns]
+LIN1
+LIN2
+[web]
+LIN3 webport=8080 webcolor=green
+LIN4 webport=9090 webcolor=red
+[ha]
+LIN3 priority=101	# <-- add new priority variable
+LIN4 priority=100	# <-- add new priority variable
+
+[WINDOWS]
+WIN ansible_host=10.22.0.101 hostname=WIN
+DEV-WIN ansible_host=10.22.0.150 hostname=DEV-WIN
+[WINDOWS:vars]
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+[dc]
+WIN
+
+```
+
+### Step 4 - Configure Playbook
+
+```bash
+debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
+```
+
+***6-ha-intranet.yml>***
+
+```yaml
+---
+- name: High Availability
+  hosts: ha
+  become: yes
+  gather_facts: false
+  vars_files: '/etc/ansible/.vault_pass'
+  
+  tasks:
+  - name: Installing HAProxy & KeepAlived
+    apt: 
+     name: 
+     - haproxy
+     - keepalived
+     state: present
+  - name: Copying HAproxy Configuration File
+    template:
+     src: /etc/ansible/templates/haproxy.cfg.j2
+     dest: /etc/haproxy/haproxy.cfg
+  - name: Copying KeepAlived Configuration File
+    template: 
+     src: /etc/ansible/templates/keepalived.conf.j2
+     dest: /etc/keepalived/keepalived.conf
+    notify: Restarting Service
+  
+  handlers:
+  - name: Restarting Service
+    service:
+     name: keepalived
+     state: restarted
+  - name: Restarting Service
+    service:
+     name: haproxy
+     state: restarted
+```
+
+**Run Playbook**
+
+## Users
+
+### Step 1 - Create Playbook
+
+```bash
+debian@HOST:/etc/ansible/linux$ sudo nano 7-users.yml
+```
+
+***7-users.yml>***
+
+```yaml
+---
+- name: Add User to LIN
+  hosts: LIN
+  gather_facts: false
+  become: yes
+  vars_files: '/etc/ansible/.vault_pass'
+  tasks:
+  - name: Reading users.csv
+    read_csv:
+     path: /etc/ansible/users.csv
+    register: user_list
+    delegate_to: localhost
+  - name: Printing user_list
+    debug:
+     var: user_list.list
+  - name: Extracting user_list
+    debug:
+     msg: "{{ item.Username }}"
+    loop: "{{ user_list.list }}"
+  - name: Creating User
+    user:
+     name: "{{ item.Username }}""
+     state: present
+    loop: "{{ user_list.list }}"
+```
+
+***users.csv>***
+
+```plaintext
+Username,UID,First_name,Last_name,Groups,Password
+booker12,9012,Rachel,Booker,Operations,iambooker
+grey07,2070,Laura,Grey,Developers,iamgrey
+johnson81,4081,Craig,Johnson,Operations,iamjohnson
+jenkins46,9346,Mary,Jenkins,Developers,iamjenkins
+smith79,5079,Jamie,Smith,Operations,iamsmith
+```
+
+**Run Playbook**
+
