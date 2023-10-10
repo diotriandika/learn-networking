@@ -2,7 +2,7 @@
 
 ## General Configuration
 
-**Step 1 - Create Directory**
+### **Step 1 - Create Directory**
 
 ```bash
 # Move to Ansible Directory
@@ -11,13 +11,42 @@ debian@HOST:~$ cd /etc/ansible
 debian@HOST:/etc/ansible$ sudo mkdir linux
 ```
 
-**Step 2 - Securing** **`.vault_pass`** **with `Skills39` vault-password**
+### **Step 2 - Securing** Vault-Pass
+
+`.vault_pass` with `Skills39` vault-password
 
 ```bash
 debian@HOST:/etc/ansible$ ansible-vault encrypt .vault_pass
 ```
 
-> By default, we can't run ansible playbook while the needed variable/files encrypted with ansible-vault. We can usee `--ask-vault-pass` by the end of command line while executing the playbook
+By default, we can't run ansible playbook while the needed variable/files encrypted with ansible-vault. We can use `--ask-vault-pass` by the end of command line while executing the playbook
+
+But here I'll using `pathing` for auto decrypting the `.vault_pass`
+
+```bash
+debian@HOST:/etc/ansible$ sudo nano .pass_vault 
+```
+
+> `.` is preventing the file shows while using list command. So the file keep hidden 
+
+**.pass_vault>**
+
+```plaintext
+Skills39 
+```
+
+Add path of the file in `ansible.cfg`
+
+```bash
+debian@HOST:/etc/ansible$ sudo nano ansible.cfg
+```
+
+**ansible.cfg>**
+
+```ini
+[defaults]
+vault_password_file = /etc/ansible/.pass_vault
+```
 
 ## Hostname
 
@@ -30,7 +59,7 @@ debian@HOST:/etc/ansible$ cd linux
 debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
 ```
 
-***1-hostname.yml >***
+**1-hostname.yml >**
 
 ```yaml
 ---
@@ -46,7 +75,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
      name: "{{ hostname }}"
 ```
 
-## nftables (terakhir)
+## nftables
 
 > eksekusi nftables terakhir, karena kita tidak tahu service apa saja yang perlu kita beri
 
@@ -56,7 +85,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
 debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
 ```
 
-***2-nftables.yml>***
+**2-nftables.yml>**
 
 ```yaml
 ---
@@ -82,7 +111,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
 debian@HOST:/etc/ansible/templates$ sudo nano nftables.conf
 ```
 
-***nftables.conf>***
+**nftables.conf>**
 
 ```jinja2
 #/usr/sbin/nft -f
@@ -111,7 +140,7 @@ table inet LIN {
 debian@HOST:/etc/ansible/linux$ sudo nano 3-dns-server.yml
 ```
 
-***3-dns-server.yml*** - Installing Bind9
+**3-dns-server.yml** - Installing Bind9
 
 ```yaml
 ---
@@ -153,7 +182,7 @@ Edit All Configuration file
 debian@HOST:/etc/ansible/templates$ sudo nano named.conf-master forward reverse
 ```
 
-***named.conf-master>***
+**named.conf-master>**
 
 ```bash
 //
@@ -179,7 +208,7 @@ zone "0.22.10.in-addr.arpa"{
 
 > disini saya menggunakan LIN2 sebagai Slave sesuai dengan list pada inventory saya
 
-***forward>***
+**forward>**
 
 ```bash
 ; 
@@ -207,7 +236,7 @@ DEV-LIN IN      A       10.22.0.251
 DEV-WIN IN      A       10.22.0.250
 ```
 
-***reverse>***
+**reverse>**
 
 ```bash
 ; 
@@ -241,7 +270,7 @@ Copy `named.conf-master` to `named.conf-slave` as slave configuration
 debian@HOST:/etc/ansible/templates$ sudo cp named.conf-master named.conf-slave
 ```
 
-***named.conf-slave>***
+**named.conf-slave>**
 
 ```bash
 //
@@ -273,7 +302,7 @@ Open playbook & Add Tasks
 debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
 ```
 
-***3-dns-server.yml***
+**3-dns-server.yml**
 
 ```yaml
 ---
@@ -341,7 +370,7 @@ debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
 debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
 ```
 
-***4-dns-client.yml***
+**4-dns-client.yml**
 
 ```yaml
 ---
@@ -370,7 +399,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
 debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
 ```
 
-***5-web-server.yml***
+**5-web-server.yml**
 
 ```yaml
 ---
@@ -397,7 +426,7 @@ Default Web
 debian@HOST:/etc/ansible/templates$ sudo nano index.j2
 ```
 
-***index.j2>*** 
+**index.j2>** 
 
 ```jinja2
 <!DOCTYPE html>
@@ -417,7 +446,7 @@ Intranet Web
 debian@HOST:/etc/ansible/templates$ sudo nano index-intranet.j2
 ```
 
-***index-intranet.j2>***
+**index-intranet.j2>**
 
 ```jinja2
 <!DOCTYPE html>
@@ -440,7 +469,7 @@ Default Site
 debian@HOST:/etc/ansible/templates$ sudo nano web-default.j2
 ```
 
-***default.j2>***
+**default.j2>**
 
 ```jinja2
 server {
@@ -459,7 +488,7 @@ Intranet Site
 debian@HOST:/etc/ansible/templates$ sudo nano default-intranet.j2
 ```
 
-***default-intranet.j2>***
+**default-intranet.j2>**
 
 ```jinja2
 server {
@@ -478,7 +507,7 @@ server {
 debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
 ```
 
-***5-web-server.yml***
+**5-web-server.yml**
 
 ```yaml
 ---
@@ -533,7 +562,7 @@ tasks:
 debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
 ```
 
-***6-ha-intranet.yml>***
+**6-ha-intranet.yml>**
 
 ```yaml
 ---
@@ -562,7 +591,7 @@ Keepalived
 debian@HOST:/etc/ansible/templates$ sudo nano keepalived.conf.j2
 ```
 
-***keepalived.conf.j2>***
+**keepalived.conf.j2>**
 
 ```jinja2
 vrrp_instance vrrp1 {
@@ -587,7 +616,7 @@ HAProxy
 debian@HOST:/etc/ansible/templates$ sudo nano haproxy.cfg.j2
 ```
 
-***haproxy.cfg.j2***
+**haproxy.cfg.j2**
 
 ```jinja2
 defaults
@@ -645,7 +674,7 @@ WIN
 debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
 ```
 
-***6-ha-intranet.yml>***
+**6-ha-intranet.yml>**
 
 ```yaml
 ---
@@ -693,7 +722,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
 debian@HOST:/etc/ansible/linux$ sudo nano 7-users.yml
 ```
 
-***7-users.yml>***
+**7-users.yml>**
 
 ```yaml
 ---
@@ -722,7 +751,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 7-users.yml
     loop: "{{ user_list.list }}"
 ```
 
-***users.csv>***
+**users.csv>**
 
 ```plaintext
 Username,UID,First_name,Last_name,Groups,Password
@@ -734,4 +763,3 @@ smith79,5079,Jamie,Smith,Operations,iamsmith
 ```
 
 **Run Playbook**
-
