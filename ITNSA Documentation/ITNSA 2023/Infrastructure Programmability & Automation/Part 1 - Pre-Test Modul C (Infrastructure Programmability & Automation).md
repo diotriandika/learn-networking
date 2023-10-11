@@ -73,6 +73,11 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
   - name: Configuring Hostname
     hostname:
      name: "{{ hostname }}"
+  - name: Adding new Hosts line
+    lineinfile:
+     path: /etc/hosts
+     line: |
+      {{ ansible_host }} {{ hostname }}
 ```
 
 ## nftables ( Masih salah )
