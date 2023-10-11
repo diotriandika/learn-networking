@@ -437,10 +437,10 @@ debian@HOST:/etc/ansible/templates$ sudo nano index.j2
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ inventory_hostname }} Web Server</title>
+	<title>{{ hostname }} Web Server</title>
 </head>
 <body style="color: {{ webcolor }};">
-	<h1>Hello from {{ inventory_hostname }}</h1>
+	<h1>Hello from {{ hostname }}</h1>
 </body>
 </html>
 ```
@@ -461,7 +461,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano index-intranet.j2
 </head>
 <body style="color: {{ webcolor }};">
 	<h1>Welcome to the Intranet of Applix</h1>
-	<p1>This site was served by {{ inventory_hostname }}</p1>
+	<p1>This site was served by {{ hostname }}</p1>
 </body>
 </html>
 ```
@@ -479,7 +479,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano web-default.j2
 ```jinja2
 server {
 	listen {{ webport }};
-	server_name {{ inventory_hostname }}.applix.com;
+	server_name {{ hostname }}.applix.com;
 	location / {
 		root /var/www/html;
 		index index.html;
