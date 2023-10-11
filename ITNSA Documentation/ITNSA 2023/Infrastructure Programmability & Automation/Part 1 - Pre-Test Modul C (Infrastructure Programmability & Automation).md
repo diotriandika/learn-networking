@@ -75,7 +75,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
      name: "{{ hostname }}"
 ```
 
-## nftables
+## nftables ( Masih salah )
 
 > eksekusi nftables terakhir, karena kita tidak tahu service apa saja yang perlu kita beri
 
@@ -113,6 +113,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano nftables.conf
 
 **nftables.conf>**
 
+> Jika menggunakan Rule dibawah, terdapat error ketika selesai mengaplikasikan playbook. Managed Node tidak lagi dapat diakses menggunakan SSH
 ```jinja2
 #/usr/sbin/nft -f
 
@@ -133,7 +134,21 @@ table inet trusted {
 }
 ```
 
+> Dibawah ini terdapat error ketika menjalankan playbook, terjadi masalah dengan koneksi SSH ketika eksek playbook (privilege escalation error). namun jika coba test SSH pada command line normal
+```jinja2
+#!/usr/sbin/nft -f
+
+table inet lin_filter {
+	chain input {
+		type filter hook input priority 0; policy drop;
+		ct state { established, related } accept
+		tcp dport { 80, 8080, 8081, 9090 } accept
+		ip ssadr { 10.22.0.50, 10.22.0.251, 10.22.0.252 } tcp dport { ssh, icmp } accept
+	}
+}
+```
 **Run Playbook** 
+
 
 ## DNS
 
