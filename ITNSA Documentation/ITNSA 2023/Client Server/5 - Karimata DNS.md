@@ -86,4 +86,6 @@ Tambahkan subdomain yang ingin diforward. lalu OK
 
 ![image-20231012192655045](https://github.com/diotriandika/learn-networking/assets/109568349/e4fdb2ae-8c7a-4efb-a421-1085f870c064)
 
+Referensi :
+- https://woshub.com/dns-conditional-forwarding-policy-windows-server/
 
