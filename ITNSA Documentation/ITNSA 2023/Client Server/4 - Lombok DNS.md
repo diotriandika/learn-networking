@@ -132,3 +132,19 @@ Finish
 ```
 
 Refresh to reload the changes
+
+Buka **DNS Manager** dan klik kanan pada **Conditional Forwarder** kemudian pilih **New Conditional Forwarder**
+
+![image-20231012191827806](https://github.com/diotriandika/learn-networking/assets/109568349/0ec32b0f-7e83-42cf-a28a-d0eafce4b39f)
+> gambar diatas cuma contoh
+
+Tambahkan subdomain yang ingin diforward. lalu OK
+
+> - karimata.id
+> - malaka.id
+
+![image-20231012192655045](https://github.com/diotriandika/learn-networking/assets/109568349/e4fdb2ae-8c7a-4efb-a421-1085f870c064)
+
+Referensi :
+- https://woshub.com/dns-conditional-forwarding-policy-windows-server/
+
