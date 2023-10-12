@@ -89,3 +89,40 @@ Reference :
 - https://www.linuxbabe.com/linux-server/linux-software-raid-1-setup
 - https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-debian-9
 - https://www.cherryservers.com/blog/how-to-partition-and-format-disk-drives-on-linux
+
+### Step 3 - Sudo Privilege SSH
+
+Create user for **sudo** privilege over **SSH** (Optional)
+
+```bash
+$ sudo adduser competitor
+```
+
+> user competitor
+>
+> passwd Skills39
+
+Add competitor to **sudo** group
+
+```bash
+$ sudo usermod -aG sudo competitor
+```
+
+Restrict **ROOT** login over **SSH**
+
+```bash
+$ sudo nano -l /etc/ssh/sshd_conf
+---
+# Uncomment Line 34 and update the following changes
+PermitLoginRoot no
+# Under the PermitLoginRoot we can Add new Line to allow specific user to use (Optional)
+AllowUsers competitor
+```
+
+Restart SSH
+
+```bash
+$ sudo systemctl restart sshd
+```
+
+## 
