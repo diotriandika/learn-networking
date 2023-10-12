@@ -29,7 +29,8 @@ Open **Server Manager** in `jukung.lks.id` and select **Tools** section then cli
 
 After DNS Manager opened, select Server. There's should be appearing sub folders named `Forward Lookup Zones` and `Reverse Lookup Zones` . Right-Click on **Forward Lookup Zones** and select **New Zone**
 
-![image-20231012101119443](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20231012101119443.png)
+![image-20231012101119443](https://github.com/diotriandika/learn-networking/assets/109568349/c63c3d36-1246-4396-92a6-d0b60a44f9f5)
+
 
 ```kotlin
 // New Zone Wizard for lks.id
@@ -75,7 +76,8 @@ Open **Server Manager** in `jukung.lks.id` and select **Tools** section then cli
 
 Select **zone**, then right-click and click on **properties** section. Look for **Zone Transfers** tab and tick the `Only to the following servers` section. Select **Edit** button then add Secondary DNS Server IP (komodo.lks.id ipv4 address). Click **Ok** and now select the **Notify** button below the **Edit** button  then add Secondary DNS Server IP (komodo.lks.id ipv4 address). 
 
-![image-20231012104412300](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20231012104412300.png)
+![image-20231012104412300](https://github.com/diotriandika/learn-networking/assets/109568349/330c05cc-5481-408a-b4da-f8f6048fd0ee)
+
 
 #### Configure Slave/Secondary DNS Server
 
@@ -83,7 +85,8 @@ Next, Open **Server Manager** in `komodo.lks.id` and select **Tools** section th
 
 After DNS Manager opened, select Server. There's should be appearing sub folders named `Forward Lookup Zones` and `Reverse Lookup Zones` . Right-Click on **Forward Lookup Zones** and select **New Zone**
 
-![image-20231012101119443](C:\Users\tpmst\AppData\Roaming\Typora\typora-user-images\image-20231012101119443.png)
+![image-20231012101119443](https://github.com/diotriandika/learn-networking/assets/109568349/e8f6cce0-a045-458f-9dc9-68b016d00813)
+
 
 ```kotlin
 // New Zone Wizard for lks.id
