@@ -71,7 +71,11 @@ Finish
 ```
 
 Add **DNS Record** according to the tasks
-Add mail.lks.id that pointing to 10.196.10.1
+
+Add mail.lks.id that pointing to 10.196.10.1 and 45.8.17.115
+
+> dalam soal tidak diberikan informasi terkait lombok.id
+
 
 Reference :
 
