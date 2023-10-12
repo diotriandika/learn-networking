@@ -9,6 +9,9 @@
 > - Both needs to have identical record.
 > - Both are the authoritative server of the lombok.id domain and lks.id domain.
 > - Create both server record in the lombok.id domain as jukung.lombok.id and komodo.lombok.id that points to the Lombok Network IP address.
+> 
+> Create records of all servers in lks.id domain according to their hostname.
+> - The record should points to all available IP Addresses in each server.
 
 #### Installing DNS Server
 
