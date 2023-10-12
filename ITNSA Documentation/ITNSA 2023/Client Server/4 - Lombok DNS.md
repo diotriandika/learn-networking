@@ -12,6 +12,11 @@
 > 
 > Create records of all servers in lks.id domain according to their hostname.
 > - The record should points to all available IP Addresses in each server.
+>
+> Create records for all other tasks required in the Lombok Network, including but not limited to:
+> - Email
+> - Web
+
 
 #### Installing DNS Server
 
@@ -66,6 +71,7 @@ Finish
 ```
 
 Add **DNS Record** according to the tasks
+Add mail.lks.id that pointing to 10.196.10.1
 
 Reference :
 
