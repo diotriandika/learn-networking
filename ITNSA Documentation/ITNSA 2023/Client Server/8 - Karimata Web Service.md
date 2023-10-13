@@ -138,3 +138,10 @@ pilih module **HTTP Redirect**
 Ikuti seperti dibawah, lalu apply dan restart website
 
 ![image-20231013084112141](https://github.com/diotriandika/learn-networking/assets/109568349/052838f1-6d67-4e2a-8c3b-9046270b0a42)
+
+### Step 7 - Add new DNS Record
+Tambahkan Entry baru di Forward Zone DNS
+
+![image](https://github.com/diotriandika/learn-networking/assets/109568349/7c9b19ab-0a46-4ae5-8795-dd5f7d2f6ece)
+
+Coba untuk cek web
