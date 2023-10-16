@@ -81,7 +81,7 @@ Disini saya akan buat scedule untuk backup ke jukung.lks.id folder `C:/backup`
 > Add arguments :
 >
 > ```
-> start backup -backupTarget:\\10.196.10.10\c-backup -include:C\internal -quiet
+> start backup -backupTarget:\\10.196.10.10\c-backup -include:C:\internal -quiet
 > ```
 
 Selanjutnya create new lagi untuk buat schedule untuk bakcup ke komodo.lks.id folder `F:/backup`
