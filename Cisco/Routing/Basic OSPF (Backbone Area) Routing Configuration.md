@@ -4,11 +4,11 @@ OSPF atau Open Shortest Path First merupakan sebuah protokol routting secara oto
 
 > Quick Tip: Jika kita sebelumnya menambahkan Network yang dituju secara manual satu persatu, pada OSPF kita hanya perlu memasukan Network yang kita punya saja. Secara otomatis Router yang terhubung di Area yang sama akan saling bertukar informasi terkait Routing Table mereka.
 
-OSPF dibedakan menjadi 2 berdasarkan areanya, yakni Singe Area (hanya menggunakan Area 0 atau Area Backbone) dan Multiarea (menggunakan area backbone dan area lain). Jika menggunakan lebih dari 1 area atau Multiarea, area lain **harus** terhubung dengan backbone area.
+OSPF dibedakan menjadi 2 berdasarkan areanya, yakni Single Area (hanya menggunakan Area 0 atau Area Backbone) dan Multiarea (menggunakan area backbone dan area lain). Jika menggunakan lebih dari 1 area atau Multiarea, area lain **harus** terhubung dengan backbone area.
 
 Apa itu Backbone area?
 
-> Backbone area adalah pusat dari OSPF, dimana semua area akan terkoneksi langsung pada area ini. Area ini akan sellau diberi label area 0. Pertukaran informasi routing network terjadi pada area ini
+> Backbone area adalah pusat dari OSPF, dimana semua area akan terkoneksi langsung pada area ini. Area ini akan selalu diberi label area 0. Pertukaran informasi routing network terjadi pada area ini
 
 Referensi (lengkap): 
 
