@@ -1,4 +1,4 @@
-# Company VPN (OpenLDAP & Remote Access VPN)
+# Company VPN (OpenLDAP STUCK!!)
 
 **Tasks:**
 
@@ -8,20 +8,6 @@
   - Use domain dc=lks,dc=id
   - Create OU VPN to store all VPN users
   - Create user remote with password Skills39 in the VPN OU to be used during VPN authentication
-
----
-
-- Configure Remote-Access VPN in buton.lks.id
-  - Use openvpn
-  - Allow clients to connect via Malaka Network only
-  - Only users in VPN OU are able to use the VPN
-  - Distribute client configuration file to connect to the VPN to cilik.lks.id
-    - Also install openvpn client in cilik.lks.id
-    - Put the file in /etc/openvpn/client.ovpn
-    - You can test the connection, but don't forget to disconnect again.
-  - Make sure client have access to both Karimata Network and Lombok Network after VPN is established.
-
----
 
 ### Step 1 - Configure OpenLDAP
 
@@ -77,7 +63,4 @@ objectClass: inetOrgPerson
 objectClass:
 ```
 
-
-
-### Step 2 - Configure Remote-Access VPN
 
