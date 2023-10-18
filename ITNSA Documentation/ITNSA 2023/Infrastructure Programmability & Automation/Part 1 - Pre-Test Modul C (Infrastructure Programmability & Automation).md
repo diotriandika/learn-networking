@@ -5,10 +5,8 @@
 ### **Step 1 - Create Directory**
 
 ```bash
-# Move to Ansible Directory
-debian@HOST:~$ cd /etc/ansible
 # Create Directory
-debian@HOST:/etc/ansible$ sudo mkdir linux
+debian@HOST:$ mkdir -p /data/ansible/linux
 ```
 
 ### **Step 2 - Securing** Vault-Pass
@@ -54,9 +52,9 @@ vault_password_file = /etc/ansible/.pass_vault
 
 ```bash
 # move to linux directory
-debian@HOST:/etc/ansible$ cd linux
+debian@HOST:/data/ansible$ cd linux
 # create playbook
-debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
+debian@HOST:/data/ansible/linux$ sudo nano 1-hostname.yml
 ```
 
 **1-hostname.yml >**
@@ -87,7 +85,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 1-hostname.yml
 ### Step 1 - Create Playbook
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
+debian@HOST:/data/ansible/linux$ sudo nano 2-nftables.yml
 ```
 
 **2-nftables.yml>**
@@ -102,7 +100,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
   tasks:
   - name: Copying nftables configuration
     copy:
-     src: /etc/ansible/templates/nftables.conf
+     src: /data/ansible/linux/templates/nftables.conf
      dest: /etc/nftables.conf
   - name: Restarting Service
     service:
@@ -113,7 +111,9 @@ debian@HOST:/etc/ansible/linux$ sudo nano 2-nftables.yml
 ### Step 2 - Create Configuration File
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano nftables.conf
+debian@HOST:/data/ansible/linux$ sudo mkdir templates
+debian@HOST:/data/ansible/linux$ cd templates/
+debian@HOST:/data/ansible/linux/templates$ sudo nano nftables.conf
 ```
 
 **nftables.conf>**
@@ -162,7 +162,7 @@ table inet lin_filter {
 ### **Step 1 - Create Playbook** - DNS Server
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 3-dns-server.yml
+debian@HOST:/data/ansible/linux$ sudo nano 3-dns-server.yml
 ```
 
 **3-dns-server.yml** - Installing Bind9
@@ -191,20 +191,16 @@ debian@HOST:/etc/ansible/linux$ sudo nano 3-dns-server.yml
 > Install BIND9 pada HOST, cuma ngambil template aja
 
 ```bash
-# Create New Directory
-debian@HOST:/etc/ansible/linux$ cd ..
-debian@HOST:/etc/ansible$ sudo mkdir templates
-debian@HOST:/etc/ansible$ cd templates/
 # Copy DNS Configuration File
-debian@HOST:/etc/ansible/templates$ sudo cp /etc/bind/named.conf.local named.conf-master
-debian@HOST:/etc/ansible/templates$ sudo cp /etc/bind/db.local forward
-debian@HOST:/etc/ansible/templates$ sudo cp /etc/bind/db.127 reverse
+debian@HOST:/data/ansible/linux/templates$ sudo cp /etc/bind/named.conf.local named.conf-master
+debian@HOST:/data/ansible/linux/templates$ sudo cp /etc/bind/db.local forward
+debian@HOST:/data/ansible/linux/templates$ sudo cp /etc/bind/db.127 reverse
 ```
 
 Edit All Configuration file
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano named.conf-master forward reverse
+debian@HOST:/data/ansible/linux/templates$ sudo nano named.conf-master forward reverse
 ```
 
 **named.conf-master>**
@@ -292,7 +288,7 @@ $TTL    604800
 Copy `named.conf-master` to `named.conf-slave` as slave configuration
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo cp named.conf-master named.conf-slave
+debian@HOST:/data/ansible/linux/templates$ sudo cp named.conf-master named.conf-slave
 ```
 
 **named.conf-slave>**
@@ -324,7 +320,7 @@ zone "0.22.10.in-addr.arpa"{
 Open playbook & Add Tasks
 
 ```bash
-debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
+debian@HOST:/data/ansible/linux/templates$ nano ../linux/3-dns-server.yml
 ```
 
 **3-dns-server.yml**
@@ -354,16 +350,16 @@ debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
     tasks:
     - name: Copying DNS File Configuration
       copy:
-       src: /etc/ansible/templates/named.conf-master
+       src: /data/ansible/linux/templates/named.conf-master
        dest: /etc/bind/named.conf.local
         - name: Copying DNS File Configuration
     - name: Copying DNS Zone Forward
       copy:
-       src: /etc/ansible/templates/forward
+       src: /data/ansible/linux/templates/forward
        dest: /etc/bind/forward
     - name: Copying DNS Zone Reverse
       copy:
-       src: /etc/ansible/templates/reverse
+       src: /data/ansible/linux/templates/reverse
        dest: /etc/bind/reverse
     - name: Restarting Service
       service:
@@ -377,7 +373,7 @@ debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
   tasks:
   - name: Copying DNS File Configuration
     copy:
-     src: /etc/ansible/templates/named.conf-slave
+     src: /data/ansible/linux/templates/named.conf-slave
      dest: /etc/bind/named.conf.local
   - name: Restarting Service
     service:
@@ -392,7 +388,7 @@ debian@HOST:/etc/ansible/templates$ nano ../linux/3-dns-server.yml
 ### Step 1 - Create Playbook - DNS Client
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
+debian@HOST:/data/ansible/linux$ sudo nano 4-dns-client.yml
 ```
 
 **4-dns-client.yml**
@@ -421,7 +417,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 4-dns-client.yml
 ### Step 1 - Create Playbook
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
+debian@HOST:/data/ansible/linux$ sudo nano 5-web-server.yml
 ```
 
 **5-web-server.yml**
@@ -448,7 +444,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
 Default Web
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano index.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano index.j2
 ```
 
 **index.j2>** 
@@ -468,7 +464,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano index.j2
 Intranet Web
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano index-intranet.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano index-intranet.j2
 ```
 
 **index-intranet.j2>**
@@ -491,7 +487,7 @@ debian@HOST:/etc/ansible/templates$ sudo nano index-intranet.j2
 Default Site
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano web-default.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano web-default.j2
 ```
 
 **default.j2>**
@@ -510,7 +506,7 @@ server {
 Intranet Site
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano default-intranet.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano default-intranet.j2
 ```
 
 **default-intranet.j2>**
@@ -529,7 +525,7 @@ server {
 ### Step 3 - Configure Playbook 
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 5-web-server.yml
+debian@HOST:/data/ansible/linux$ sudo nano 5-web-server.yml
 ```
 
 **5-web-server.yml**
@@ -549,7 +545,7 @@ tasks:
      state: present
   - name: Copying Default Site Configuration
     template:
-     src: /etc/ansible/templates/web-default.j2
+     src: /data/ansible/linux/templates/web-default.j2
      dest: /etc/nginx/sites-enabled/web-default
   - name: Copying Default Index
     template:
@@ -558,7 +554,7 @@ tasks:
  
  - name: Copying Intranet Site Configuration
     template:
-     src: /etc/ansible/templates/default-intranet.j2
+     src: /data/ansible/linux/templates/default-intranet.j2
      dest: /etc/nginx/sites-enabled/intranet
   - name: Create Directory for Intranet
     file:
@@ -566,7 +562,7 @@ tasks:
      state: directory
   - name: Copying Intranet Index
     template:
-     src: /etc/ansible/templates/index-intranet.j2
+     src: /data/ansible/linux/templates/index-intranet.j2
      dest: /var/www/intranet/index.html
     notify: restart nginx
 
@@ -584,7 +580,7 @@ tasks:
 ### Step 1 - Create Playbook
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
+debian@HOST:/data/ansible/linux$ sudo nano 6-ha-intranet.yml
 ```
 
 **6-ha-intranet.yml>**
@@ -613,7 +609,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
 Keepalived
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano keepalived.conf.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano keepalived.conf.j2
 ```
 
 **keepalived.conf.j2>**
@@ -638,7 +634,7 @@ vrrp_instance vrrp1 {
 HAProxy
 
 ```bash
-debian@HOST:/etc/ansible/templates$ sudo nano haproxy.cfg.j2
+debian@HOST:/data/ansible/linux/templates$ sudo nano haproxy.cfg.j2
 ```
 
 **haproxy.cfg.j2**
@@ -696,7 +692,7 @@ WIN
 ### Step 4 - Configure Playbook
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
+debian@HOST:/data/ansible/linux$ sudo nano 6-ha-intranet.yml
 ```
 
 **6-ha-intranet.yml>**
@@ -718,11 +714,11 @@ debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
      state: present
   - name: Copying HAproxy Configuration File
     template:
-     src: /etc/ansible/templates/haproxy.cfg.j2
+     src: /data/ansible/linux/templates/haproxy.cfg.j2
      dest: /etc/haproxy/haproxy.cfg
   - name: Copying KeepAlived Configuration File
     template: 
-     src: /etc/ansible/templates/keepalived.conf.j2
+     src: /data/ansible/linux/templates/keepalived.conf.j2
      dest: /etc/keepalived/keepalived.conf
     notify: Restarting Service
   
@@ -744,7 +740,7 @@ debian@HOST:/etc/ansible/linux$ sudo nano 6-ha-intranet.yml
 ### Step 1 - Create Playbook
 
 ```bash
-debian@HOST:/etc/ansible/linux$ sudo nano 7-users.yml
+debian@HOST:/data/ansible/linux$ sudo nano 7-users.yml
 ```
 
 **7-users.yml>**
