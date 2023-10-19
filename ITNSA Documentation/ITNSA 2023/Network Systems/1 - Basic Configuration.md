@@ -103,7 +103,9 @@ Akses Network Device, dan set Timezone ke GMT+7
 ISP(config)# clock timezone GMT+7 7
 ```
 
-
+Referensi:
+- https://www.youtube.com/watch?v=s9DMZCq27Ys&ab_channel=TA
+- https://learningnetwork.cisco.com/s/article/cisco-routers-password-types
 
 
 
