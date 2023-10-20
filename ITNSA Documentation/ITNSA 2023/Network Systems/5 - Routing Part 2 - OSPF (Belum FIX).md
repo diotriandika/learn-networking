@@ -110,3 +110,4 @@ L3SW-2(config-router)# network 192.168.20.0 0.0.1.255 area 0
 L3SW-2(config-router)# exit
 ```
 
+masih belum bisa reach ws-srv, karena disoal cmn nyuruh buat masukin public ip aja klo node router
