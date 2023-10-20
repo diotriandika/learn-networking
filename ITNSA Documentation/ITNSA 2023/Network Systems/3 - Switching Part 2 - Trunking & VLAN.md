@@ -127,4 +127,15 @@ L3SW-2(config)# vtp mode server
 L3SW-2(config)# vtp password Skills39
 ```
 
+Give Access VLAN to Interface Client
+```kotlin
+// VLAN CLI
+L2SW-1(config)# interface gigabitEthernet 0/3
+L2SW-1(config-if)# switchport mode access
+L2SW-1(config-if)# switchport access vlan 20
+// VLAN SRV
+L2SW-2(config-if)# interface gigabitEthernet 0/3
+L2SW-2(config-if)# switchport mode access
+L2SW-2(config-if)# switchport access vlan 10
+```
 Cek konfigurasi
