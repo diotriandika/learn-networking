@@ -81,7 +81,11 @@ $ sudo nano /etc/fstab
 # Add in the end of line
 /dev/md0	/data	ext4	defaults	0	0
 ```
+update 
 
+```
+$ sudo update-initramfs-u
+```
 Try to **reboot** the system
 
 Reference : 
