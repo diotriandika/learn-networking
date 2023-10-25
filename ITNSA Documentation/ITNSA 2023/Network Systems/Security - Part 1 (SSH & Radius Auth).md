@@ -22,3 +22,10 @@
 ---
 
 ### Step 1 - Configure 
+```
+aaa new-model
+aaa authen login default group radius local
+radius server namaradius
+ address 3.0.180.201 auth-port 1812 acct-port 1813
+ key Skills39s
+```
