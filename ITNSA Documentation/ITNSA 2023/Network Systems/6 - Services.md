@@ -100,7 +100,8 @@ Add EST-1 and EST-2 to Cacti.
 Console > Management > Devices > Add
 ```
 
-![Uploading image-20231022011601101.png…]()
+
+![image-20231022011601101](https://github.com/diotriandika/learn-networking/assets/109568349/c5bcf74b-3b9e-404b-951a-ac3cbb30239e)
 
 
 Configure with following changes
