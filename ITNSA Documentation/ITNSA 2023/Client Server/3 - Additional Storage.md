@@ -89,7 +89,7 @@ In Target section enter `muna.lks.id` ipv4 addresses and select **Quick Connect*
 
 ![image-20231012085840783](https://github.com/diotriandika/learn-networking/assets/109568349/11a2eb67-191c-43f2-8949-bb63bc9b8a42)
 
-The new window will showing up, Select the disk that we'll used then click **Connect** untul the **Status** changed to **Connected**. Exit by select **Done** menu
+The new window will showing up, Select the disk that we'll used then click **Connect** until the **Status** changed to **Connected**. Exit by select **Done** menu
 
 Now open **Disk Management** to use the disk. Open **Windows Search** and search for **Disk Management** then Enter
 
