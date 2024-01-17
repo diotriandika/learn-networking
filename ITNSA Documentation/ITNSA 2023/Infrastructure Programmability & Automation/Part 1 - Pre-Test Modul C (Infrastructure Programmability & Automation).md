@@ -173,7 +173,7 @@ debian@HOST:/data/ansible/linux$ sudo nano 3-dns-server.yml
   hosts: dns
   gather_facts: false
   become: yes
-  vars:
+  vars_files:
   - '/etc/ansible/.vault_pass'
   
   tasks:
@@ -331,7 +331,7 @@ debian@HOST:/data/ansible/linux/templates$ nano ../linux/3-dns-server.yml
   hosts: dns
   gather_facts: false
   become: yes
-  vars:
+  vars_files:
   - '/etc/ansible/.vault_pass'
   
   tasks:
