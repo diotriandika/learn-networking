@@ -182,7 +182,8 @@ debian@HOST:/data/ansible/linux$ sudo nano 3-dns-server.yml
      name: bind9-libs
      state: absent
   - name: Installing Bind9
-     apt: bind9
+    apt:
+     name: bind9
      state: present
 ```
 
