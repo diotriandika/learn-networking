@@ -63,18 +63,18 @@ server {
 	listen 80;
 	server_name www.malaka.id;
 	location / {
-		root /var/www/home
-		index index.html
+		root /var/www/home;
+		index index.html;
 	}
 }
 server {
 	listen 443 ssl;
 	server_name www.malaka.id;
-	ssl_certificate /home/user/malaka.id.crt
-	ssl_certificate_key /home/user/malaka.id.key
+	ssl_certificate /home/user/malaka.id.crt;
+	ssl_certificate_key /home/user/malaka.id.key;
 	location / {
-		root /var/www/home
-		index index.html
+		root /var/www/home;
+		index index.html;
 	}
 }
 ---
