@@ -294,10 +294,10 @@ for i in {1..10}
 do
 	if [ $i -eq 10 ];
 	then
-		echo "user$i	IN	A	45.8.17.23" >> forward
+		echo "user$i	IN	A	45.8.17.23" >> forward #(File DNS Forward)
 	elif [ $i -lt 10 ];
 	then
-		echo "user0$i	IN	A	45.8.17.23" >> forward
+		echo "user0$i	IN	A	45.8.17.23" >> forward #(File DNS Forward)
 	fi
 done
 ---
