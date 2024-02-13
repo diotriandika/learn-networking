@@ -157,7 +157,7 @@ do
 	if [ $i -eq 10 ];
 	then
 		
-	if [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 	
 	fi
@@ -174,7 +174,7 @@ do
 	then
 		cp template user$i
 		sed -i 's/username/user$i/g' user$i
-	if [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
 		sed -i 's/username/user0$i/g' user0$i
@@ -194,7 +194,7 @@ do
 		sed -i 's/username/user$i/g' user$i
 		mkdir /var/www/user$i
 		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
-	if [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
 		sed -i 's/username/user0$i/g' user0$i
@@ -217,7 +217,7 @@ do
 		mkdir /var/www/user$i
 		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
 		htpasswd -c -b "/etc/nginx/.user$i" "user$i" "Skills39"
-	if [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
 		sed -i 's/username/user0$i/g' user0$i
@@ -242,7 +242,7 @@ do
 		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
 		htpasswd -c -b "/etc/nginx/.user$i" "user$i" "Skills39"
 		ln -s /etc/nginx/sites-available/user$i /etc/nginx/sites-enabled/
-	if [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
 		sed -i 's/username/user0$i/g' user0$i
@@ -295,7 +295,7 @@ do
 	if [ $i -eq 10 ];
 	then
 		echo "user$i	IN	A	45.8.17.23" >> forward
-	elif [ $i -lt 10];
+	elif [ $i -lt 10 ];
 	then
 		echo "user0$i	IN	A	45.8.17.23" >> forward
 	fi
