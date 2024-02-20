@@ -40,6 +40,7 @@ Configure `vars`
 $ sudo mv vars.example vars
 # Edit fil
 $ sudo nano -l vars
+#Uncomment Line di bawah
 ===
 50 set_var EASYRSA "$PWD"
 72 set_var EASYRSA_PKI
