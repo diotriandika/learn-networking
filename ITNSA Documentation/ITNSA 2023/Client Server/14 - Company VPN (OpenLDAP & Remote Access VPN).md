@@ -62,7 +62,8 @@ $ sudo apt install ldapscripts
 ```
 Edit File ldapscripts.conf
 ```bash
-nano /etc/ldapscripts.conf
+$ sudo nano /etc/ldapscripts.conf
+---
 #Uncomment pada SUFFIX, dan USUFFINX. lalu edit BINDDN
 SUFFIX
 USUFFIX
