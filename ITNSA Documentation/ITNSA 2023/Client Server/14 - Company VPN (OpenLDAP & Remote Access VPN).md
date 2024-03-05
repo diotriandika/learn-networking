@@ -54,13 +54,29 @@ $ slapcat
 ```
 
 Create user
-
-```bash
-$ sudo nano user.ldif
 ---
-dn: cn=vpn,ou=VPN,dc=lks,dc=id
-objectClass: inetOrgPerson
-objectClass:
+- Install ldapscripts
+```bash
+$ sudo apt install ldapscripts
 ```
-
+Edit File ldapscripts.conf
+```bash
+nano /etc/ldapscripts.conf
+#Uncomment pada SUFFIX, dan USUFFINX. lalu edit BINDDN
+SUFFIX
+USUFFIX
+BINDDN
+```
+Rubah isi dari file ldapscripts.passwd
+```bash
+echo -n "Skills39s >> /etc/ldapscripts/ldapscripts.passwd
+```
+Lalu tambahkan user
+```bash
+ldapadduser vpn 1000
+```
+Rubah password user nya
+```bash
+ldapsetpasswd vpn Skills39s
+```
 
