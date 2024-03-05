@@ -135,7 +135,7 @@ pilih module **HTTP Redirect**
 ![image-20231013084052291](https://github.com/diotriandika/learn-networking/assets/109568349/a69afaa0-0392-47e9-852c-d3b7c61dd5cb)
 
 
-Ikuti seperti dibawah, lalu apply dan restart website
+Ikuti seperti dibawah, lalu apply dan restart website (https://www.karimata.id/)
 
 ![image-20231013084112141](https://github.com/diotriandika/learn-networking/assets/109568349/052838f1-6d67-4e2a-8c3b-9046270b0a42)
 
