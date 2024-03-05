@@ -53,7 +53,8 @@ check
 $ slapcat
 ```
 
-Create user
+### Step 2 - Create user
+
 ---
 - Install ldapscripts
 ```bash
