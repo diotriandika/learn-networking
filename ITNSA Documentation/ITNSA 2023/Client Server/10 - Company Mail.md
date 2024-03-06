@@ -282,10 +282,11 @@ $ sudo nano /etc/apache2/sites-available/000-default.conf
 </VirtualHost>
 ```
 
-Restart Service
+Restart Service and Enable SSL Modul
 
 ```bash
 $ sudo systemctl restart apache2
+$ sudo a2enmod ssl
 ```
 
 ### Verif
