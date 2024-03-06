@@ -220,9 +220,9 @@ submission inet n       -       y       -       -       smtpd
   -o smtpd_tls_security_level=encrypt
   -o smtpd_sasl_auth_enable=yes
   
-submission inet n       -       y       -       -       smtpd
+smtps inet n       -       y       -       -       smtpd
   -o syslog_name=postfix/submission
-  -o smtpd_tls_security_level=encrypt
+  -o smtpd_tls_wrappermode=yes
   -o smtpd_sasl_auth_enable=yes
 ---
 ```
