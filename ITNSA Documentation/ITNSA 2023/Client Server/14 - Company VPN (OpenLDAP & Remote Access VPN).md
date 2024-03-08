@@ -85,11 +85,14 @@ Lalu Konfigurasi untuk Openvpn Auth LDAP nya
 ```bash
 $ sudo apt install openvpn-auth-ldap
 ```
-Copy file auth-ldap.conf lalu edit
+Copy file auth-ldap.conf
 ```bash
 ---
 $ sudo cp /usr/share/doc/openvpn-auth-ldap/examples/auth-ldap.conf /etc/openvpn/
 ---
+```
+Edit File
+```bash
 $ sudo nano auth-ldap.conf
 ---
 URL        ldap://buton.lks.id
