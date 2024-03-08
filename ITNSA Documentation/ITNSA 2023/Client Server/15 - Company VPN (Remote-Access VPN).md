@@ -138,8 +138,8 @@ dh /etc/openvpn/server/dh.pem
 
 server 10.250.2.0 255.255.255.0
 push "redirect-gateway def1"
-keepalive 10 300
 
+keepalive 10 300
 comp-lzo
 user nobody
 group nogroup
