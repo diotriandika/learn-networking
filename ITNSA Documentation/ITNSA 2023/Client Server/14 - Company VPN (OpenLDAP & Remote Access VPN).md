@@ -105,4 +105,6 @@ BaseDN      "ou=VPN,dc=lks,dc=id"
 SearchFilter "(&(uid=%u))"
 # lalu tambahkan comment pada <group> dan setiap line yang ada di dalamnya
 ```
+References:
 - [Openvpn-auth-ldap](https://medium.com/@hiranadikari993/openvpn-active-directory-authentication-726f3bac3546)
+- [Openvpn-auth-ldap](https://nciptandani.blogspot.com/2019/02/konfigurasi-itnsa-openvpn-auth-ldap.html)
