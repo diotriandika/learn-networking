@@ -65,9 +65,9 @@ Edit File ldapscripts.conf
 $ sudo nano /etc/ldapscripts.conf
 ---
 #Uncomment pada SUFFIX, dan USUFFINX. lalu edit BINDDN
-SUFFIX
-USUFFIX
-BINDDN
+SUFFIX="dc=lks,dc=id"
+USUFFIX="ou=VPN"
+BINDDN="cn=admin,dc=lks,dc=id"
 ```
 Rubah isi dari file ldapscripts.passwd
 ```bash
