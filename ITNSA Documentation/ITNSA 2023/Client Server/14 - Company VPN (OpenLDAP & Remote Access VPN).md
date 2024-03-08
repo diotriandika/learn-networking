@@ -89,5 +89,5 @@ Copy file auth-ldap.conf lalu edit
 ```bash
 cp /usr/share/doc/openvpn-auth-ldap/examples/auth-ldap.conf /etc/openvpn/
 ---
-nano auth-ldap.conf
+$ sudo nano auth-ldap.conf
 ```
