@@ -93,7 +93,7 @@ $ sudo cp /usr/share/doc/openvpn-auth-ldap/examples/auth-ldap.conf /etc/openvpn/
 $ sudo nano auth-ldap.conf
 ---
 URL        ldap://buton.lks.id
-# uncomment pada BindDN & Password, lalu edit
+# Uncomment pada BindDN & Password, lalu edit
 BindDN      cn=admin,dc=lks,dc=id
 Password    Skills39s
 # Tambahkan comment pada setiap line yang berhubungan dengan TLS
