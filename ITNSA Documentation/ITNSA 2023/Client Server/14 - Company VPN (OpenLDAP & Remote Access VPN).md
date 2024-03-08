@@ -71,7 +71,7 @@ BINDDN="cn=admin,dc=lks,dc=id"
 ```
 Rubah isi dari file ldapscripts.passwd
 ```bash
-echo -n "Skills39s >> /etc/ldapscripts/ldapscripts.passwd
+echo -n "Skills39s > /etc/ldapscripts/ldapscripts.passwd
 ```
 Lalu tambahkan user
 ```bash
