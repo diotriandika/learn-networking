@@ -193,7 +193,7 @@ do
 		cp template user$i
 		sed -i 's/username/user'$i'/g' user$i
 		mkdir /var/www/user$i
-		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
+		echo "<html><h1>This is user website. The content not yet changed</h1></html>" > /var/www/user$i/index.html
 	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
@@ -215,7 +215,7 @@ do
 		cp template user$i
 		sed -i 's/username/user'$i'/g' user$i
 		mkdir /var/www/user$i
-		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
+		echo "<html><h1>This is user website. The content not yet changed</h1></html>" > /var/www/user$i/index.html
 		htpasswd -c -b "/etc/nginx/.user$i" "user$i" "Skills39"
 	elif [ $i -lt 10 ];
 	then
@@ -223,7 +223,7 @@ do
 		sed -i 's/username/user0'$i'/g' user0$i
 		mkdir /var/www/user0$i
 		echo "<html><h1>This is user website. The content not yet changed</h1></html>" > /var/www/user0$i/index.html
-		htpasswd -c -b "/etc/nginx/user0$i" "user0$i" "Skills39"
+		htpasswd -c -b "/etc/nginx/.user0$i" "user0$i" "Skills39"
 	fi
 done
 ```
@@ -239,9 +239,9 @@ do
 		cp template user$i
 		sed -i 's/username/user'$i'/g' user$i
 		mkdir /var/www/user$i
-		echo "<html><h1>This is user website. The content not yet changed</h1></html>" /var/www/user$i/index.html
+		echo "<html><h1>This is user website. The content not yet changed</h1></html>" > /var/www/user$i/index.html
 		htpasswd -c -b "/etc/nginx/.user$i" "user$i" "Skills39"
-		ln -s /etc/nginx/sites-available/user$i /etc/nginx/sites-enabled/
+		ln -s /etc/nginx/sites-available/.user$i /etc/nginx/sites-enabled/
 	elif [ $i -lt 10 ];
 	then
 	   	cp template user0$i
@@ -249,7 +249,7 @@ do
 		mkdir /var/www/user0$i
 		echo "<html><h1>This is user website. The content not yet changed</h1></html>" > /var/www/user0$i/index.html
 		htpasswd -c -b "/etc/nginx/user0$i" "user0$i" "Skills39"
-		ln -s /etc/nginx/sites-available/user0$i /etc/nginx/sites-enabled/
+		ln -s /etc/nginx/sites-available/.user0$i /etc/nginx/sites-enabled/
 	fi
 done
 ```
