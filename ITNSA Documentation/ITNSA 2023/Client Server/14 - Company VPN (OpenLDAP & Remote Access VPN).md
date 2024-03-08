@@ -1,4 +1,4 @@
-# Company VPN ( On Going )
+# Company VPN
 
 **Tasks:**
 
