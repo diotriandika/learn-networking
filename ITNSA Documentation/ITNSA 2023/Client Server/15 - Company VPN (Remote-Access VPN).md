@@ -130,18 +130,22 @@ $ sudo nano server.conf
 port 1194
 proto udp
 dev tun
+
 ca /etc/openvpn/server/ca.crt
 cert /etc/openvpn/server/vpnserver.crt
 key /etc/openpvn/server/vpnserver.key
 dh /etc/openvpn/server/dh.pem
+
 server 10.250.2.0 255.255.255.0
 push "redirect-gateway def1"
 keepalive 10 300
+
 comp-lzo
 user nobody
 group nogroup
 persist-tun
 persist-key
+plugin /usr/lib/openvpn/openvpn-auth-ldap.so /etc/openvpn/auth-ldap.conf
 log-append /var/log/server.log
 verb 3
 ===
@@ -172,6 +176,7 @@ user nobody
 group nogroup
 persist-tun
 persist-key
+auth-user-pass
 verb 3
 ===
 ```
