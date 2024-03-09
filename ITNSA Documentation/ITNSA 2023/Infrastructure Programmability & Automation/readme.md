@@ -40,11 +40,11 @@ WIN
 ```yaml
 # .vault_pass
 ansible_ssh_user: debian
-ansible_ssh_pass: P@ssw0rd
-ansible_sudo_pass: P@ssw0rd
+ansible_ssh_password: P@ssw0rd
+ansible_sudo_password: P@ssw0rd
 
 ansible_user: user
-ansible_password: P@ssw0rd
+ansible_pass: P@ssw0rd
 ```
 
 **users.csv**
