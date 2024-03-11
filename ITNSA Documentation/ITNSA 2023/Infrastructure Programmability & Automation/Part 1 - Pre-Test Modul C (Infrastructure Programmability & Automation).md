@@ -766,9 +766,19 @@ debian@HOST:/data/ansible/linux$ sudo nano 7-users.yml
     debug:
      msg: "{{ item.Username }}"
     loop: "{{ user_list.list }}"
+  - name: Create Group
+    group:
+     name: "{{ item.Groups }}"
+     state: present
+    loop: "{{ user_list.list }}"
   - name: Creating User
     user:
-     name: "{{ item.Username }}""
+     name: "{{ item.Username }}"
+     password: "{{ item.Password | password_hash('sha512')}}"
+     uid: "{{ item.UID }}"
+     groups: "{{ item.Groups }}"
+     append: true
+     comment: "{{ item.First_name }} {{ item.Last_name }}
      state: present
     loop: "{{ user_list.list }}"
 ```
