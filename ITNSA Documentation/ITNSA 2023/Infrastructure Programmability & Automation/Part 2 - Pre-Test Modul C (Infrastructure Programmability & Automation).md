@@ -30,7 +30,7 @@ debian@HOST:/etc/ansible/windows$ sudo nano 1-win-hostname.yml
      name: "{{ hostname }}"
     register: win_hostname
   - name: Rebooting System
-    win_reboot
+    win_reboot:
     when: win_hostname. reboot_required
 ```
 
@@ -55,7 +55,7 @@ debian@HOST:/etc/ansible/windows$ sudo nano 2-sec-log.yml
   tasks:
   - name: Disabling Remote Desktop Service
     win_service:
-     name: TermServices
+     name: TermService
      state: stopped
      start_mode: disabled
     ignore_errors: yes
@@ -98,7 +98,7 @@ debian@HOST:/etc/ansible/windows$ sudo nano 3-environment.yml
   - name: Installing IIS
     win_feature: 
      name: Web-Server
-     state: Present
+     state: present
     when: "'iis' in group_names"
 ```
 
