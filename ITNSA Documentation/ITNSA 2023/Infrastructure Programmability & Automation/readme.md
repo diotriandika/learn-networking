@@ -44,7 +44,7 @@ ansible_ssh_password: P@ssw0rd
 ansible_sudo_password: P@ssw0rd
 
 ansible_user: user
-ansible_pass: P@ssw0rd
+ansible_password: P@ssw0rd
 ```
 
 **users.csv**
